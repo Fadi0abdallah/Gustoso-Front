@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.logoheader {
+    width: 250px;
+    height: 200px;
+}
+
+.logoprofile {
+    width: 50px;
+    height: 50px;
+}
+
+.logosearch {
+    width: 50px;
+    height: 50px;
+}
+
+.connexionNav {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+.recetteNav {
+    height: 100px;
+    width: 500px;
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.divsearch {
+    margin-top: 20px;
+    width: 350px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    border: 2px solid black;
+}
+
+.btnConnexion {
+    display: flex;
+    border-radius: 25px;
+    background-color: rgba(59, 59, 59, 0.2);
+    color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+}

@@ -1,6 +1,11 @@
 const Accueil = () => {
     return (
-        <h1>welcome home</h1>
+        <>
+            <p>home page</p>
+            <h2>dff</h2>
+        </>
+
     )
+
 }
 export default Accueil

@@ -1,66 +1,213 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     list-style: none;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 header {
-    width: 100%;
-
+    padding: 0 20px 0 20px;
+    background-color: #f4f4f8a4;
     display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
     justify-content: space-around;
 
+
+}
+
+.section4 {
+    display: flex;
+    border-radius: 20px;
+    background-color: #ff724c;
+    color: aliceblue;
+    font-size: 20px;
+    padding: 8px 15px;
+    text-align: center;
+}
+
+
+.logoAndbar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .logoheader {
-    width: 250px;
-    height: 200px;
-}
-
-.logoprofile {
-    width: 50px;
-    height: 50px;
+    width: 150px;
+    height: 150px;
 }
 
 .logosearch {
-    width: 50px;
-    height: 50px;
-}
-
-.connexionNav {
-    margin-top: 25px;
-    display: flex;
-    gap: 10px;
-}
-
-.recetteNav {
-    height: 100px;
-    width: 500px;
-    margin-top: 20px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-evenly;
-    flex-direction: row;
-    gap: 50px;
+    width: 40px;
+    height: 35px;
+    margin: 5px;
 }
 
 .divsearch {
-    margin-top: 20px;
-    width: 350px;
+    width: 300px;
     height: 50px;
     background-color: rgb(255, 255, 255);
     border-radius: 50px;
     border: 2px solid black;
+    display: flex;
+    align-items: center;
+
 }
 
-.btnConnexion {
+
+.recetteNav {
     display: flex;
-    border-radius: 25px;
-    background-color: rgba(59, 59, 59, 0.2);
-    color: rgb(0, 0, 0);
-    margin: 0;
-    padding: 10px 20px;
+    gap: 15px;
+}
+
+.recetteNav li {
+    padding: 10px;
+    transition: all ease 0.5s;
+}
+
+#burger {
+    display: none;
+}
+
+#burger span {
+    transition: transform 0.2s;
+}
+
+a {
+    color: #2a2c41;
     text-decoration: none;
-    text-align: center;
-    margin-top: 10px;
+    transition: all ease 0.5s;
+    font-size: 30px;
+}
+
+/* .recetteNav li:last-of-type {
+    border: dashed 1px white;
+}
+
+.recetteNav li:last-of-type:hover {
+    border-color: #ff724c;
+    cursor: pointer;
+} */
+
+.recetteNav li:last-of-type:hover a,
+a:hover {
+    color: #fdbf50;
+}
+
+@media screen and (max-width: 1200px) {
+
+    #burger {
+        display: block;
+        cursor: pointer;
+    }
+
+    nav {
+        width: fit-content;
+    }
+
+    #burger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: #bc4747;
+        transition: all 0.3s;
+    }
+
+    #burger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    #burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #burger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menu.active {
+        display: block;
+    }
+
+    .recetteNav {
+        display: none;
+        position: absolute;
+        top: 150px;
+        left: 80px;
+
+        background-color: #ffffff;
+        padding: 20px;
+    }
+
+    .recetteNav.active {
+        display: block;
+    }
+
+    .recetteNav li:last-of-type {
+        text-align: center;
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .logoheader {
+        width: 150px;
+        height: 100px;
+    }
+
+    .divsearch {
+        width: 80%;
+        height: 40px;
+    }
+
+    .logosearch {
+        width: 40px;
+        height: 40px;
+    }
+
+    .recetteNav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .recetteNav li {
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logoheader {
+        width: 100px;
+        height: 70px;
+    }
+
+    .divsearch {
+        width: 80%;
+        height: 35px;
+
+
+    }
+
+    .logosearch {
+        width: 35px;
+        height: 35px;
+    }
+
+    .recetteNav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .recetteNav li {
+        padding: 5px;
+    }
 }

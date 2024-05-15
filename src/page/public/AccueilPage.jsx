@@ -5,7 +5,8 @@ const AccueilPage = () => {
     return (
         <>
             <Header />
-            <Accueil />
+
+
         </>
 
     )

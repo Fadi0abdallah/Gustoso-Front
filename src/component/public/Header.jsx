@@ -32,7 +32,7 @@ const Header = () => {
             </nav>
 
             <div className='logoAndbar'>
-                <img className='logoheader' src="../public/food___beverage-removebg-preview.png" alt="logo" />
+                <img className='logoheader' src="../public/logoAndImage/food___beverage-removebg-preview.png" alt="logo" />
                 <div className='divsearch'>
                     <img className='logosearch' src="../public/logoAndImage/search.png" alt="search" />
                 </div>

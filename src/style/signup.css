@@ -1,0 +1,101 @@
+.signup h1 {
+    font-size: 60px;
+}
+
+.signup h1 span {
+    color: #FDBF50;
+}
+
+.signup {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    border: 5px solid black;
+    border-radius: 20px;
+    width: 40vw;
+    height: 50vh;
+    position: absolute;
+    right: 30%;
+}
+
+section {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.usernameinput {
+    padding: 6px 12px;
+    background: #2A2C41;
+    border: 2px solid #FF724C;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #FF724C;
+    height: 6vh;
+    width: 15vw;
+    appearance: none;
+    transition: border 0.15s ease 0s;
+    font-size: 30px;
+
+    :focus {
+        outline: none;
+        box-shadow: none;
+        border-color: rgb(100, 153, 255);
+    }
+
+}
+
+.passwordinput {
+
+    padding: 6px 12px;
+    background: #2A2C41;
+    border: 2px solid #FF724C;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #FF724C;
+    height: 6vh;
+    width: 15vw;
+    appearance: none;
+    transition: border 0.15s ease 0s;
+    font-size: 30px;
+
+
+    :focus {
+        outline: none;
+        box-shadow: none;
+        border-color: rgb(100, 153, 255);
+    }
+
+}
+
+.submitinput {
+
+    display: inline-block;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    padding: 0 24px;
+    border-radius: 30px;
+    min-width: 200px;
+    height: 80px;
+    font-size: 30px;
+    background-color: #FF724C;
+    font-weight: 800;
+    color: #2A2C41;
+
+}
+
+::placeholder {
+    color: #ff734c71;
+}
+
+.backgroundsignUp {
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.5;
+}

@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Times New Roman', Times, serif;
+    color: #2A2C41;
+}
+
+footer {
+    background-color: #f4f4f8a4;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.gridOne {
+
+    grid-column: 4/5;
+    grid-row: 1 / 4;
+    margin-top: 50px;
+}
+
+
+
+.gridThree {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 35px;
+    font-weight: 700;
+    margin-top: 30px;
+    text-align: center;
+
+
+}
+
+.gridFour {
+    grid-column: 2;
+    grid-row: 1;
+    margin-left: 150px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+
+
+}
+
+.gridFive {
+    grid-column: 2/5;
+    grid-row: 4/5;
+    font-size: 35px;
+    text-align: center;
+    font-weight: 700;
+
+}
+
+.gridFive ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-self: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logofooter {
+    width: 250px;
+    height: 250px;
+}
+
+.socialmedia {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gridOne h1 {
+    font-size: 38px;
+}
+
+.gridOne h1 span {
+    color: #FDBF50;
+}
+
+
+
+.socialmedia li img {
+    width: 90px;
+    height: 90px;
+}
+
+
+
+.divinput {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+
+
+@media screen and (max-width: 868px) {
+    .gridFive ul {
+        display: flex;
+        flex-flow: column wrap;
+        justify-self: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    ;
+
+    .socialmedia li img {
+        width: 70px;
+        height: 70px;
+    }
+}

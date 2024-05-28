@@ -6,14 +6,14 @@ const Footer = () => {
 
                 <h1>Suivez-nous sur nos <span>réseaux sociaux !</span></h1>
                 <ul className="socialmedia">
-                    <li><img src="../public/logoAndImage/facebook.png" alt="" /></li>
-                    <li><img src="../public/logoAndImage/instagram.png" alt="" /></li>
-                    <li><img src="../public/logoAndImage/twitter.png" alt="" /></li>
+                    <li><img src="/logoAndImage/facebook.png" alt="" /></li>
+                    <li><img src="/logoAndImage/instagram.png" alt="" /></li>
+                    <li><img src="/logoAndImage/twitter.png" alt="" /></li>
                 </ul>
             </section>
             <section className="gridFour">
 
-                <img className="logofooter" src="../public/logoAndImage/food___beverage-removebg-preview.png" alt="logo" />
+                <img className="logofooter" src="/logoAndImage/food___beverage-removebg-preview.png" alt="logo" />
 
             </section>
 

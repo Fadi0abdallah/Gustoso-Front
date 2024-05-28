@@ -1,16 +1,15 @@
-import Accueil from "../../component/public/Accueil"
+import DeatilRecette from "../../component/public/DeatilRecette"
 import Footer from "../../component/public/Footer"
 import Header from "../../component/public/Header"
 
-const AccueilPage = () => {
+const DeatilRecettePage = () => {
     return (
         <>
             <Header />
-            <Accueil />
+            <DeatilRecette />
             <Footer />
-
         </>
 
     )
 }
-export default AccueilPage
+export default DeatilRecettePage

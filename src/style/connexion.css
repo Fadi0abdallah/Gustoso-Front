@@ -1,0 +1,275 @@
+.connexion h1 {
+    font-size: 85px;
+
+}
+
+.connexion h1 span {
+    color: #FDBF50;
+    font-weight: 900;
+    font-size: 90px;
+}
+
+.connexion h2 {
+    font-size: 70px;
+}
+
+.connexion h2 span {
+    color: #FDBF50;
+    font-weight: 900;
+    font-size: 80px;
+}
+
+.connexion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border: 5px solid black;
+    border-radius: 20px;
+    width: 60vw;
+    height: 90vh;
+    position: absolute;
+    right: 25%;
+    background-color: #f4f4f89c;
+    box-shadow: #ff734c60 2px 5px;
+}
+
+.connexion p {
+    font-size: 65px;
+    text-align: center;
+}
+
+.connexion h3 {
+    font-size: 50px
+}
+
+.sectionConnexion {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("https://cdn.pixabay.com/photo/2015/10/25/09/52/italy-1005507_1280.jpg");
+    background-size: cover;
+}
+
+.sectionSignup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #868686;
+    /* background-image: url("https://cdn.pixabay.com/photo/2015/10/25/09/52/italy-1005507_1280.jpg"); */
+    background-size: cover;
+}
+
+.usernameinput {
+    padding: 6px 12px;
+    background: #2A2C41;
+    border: 2px solid #FF724C;
+    border-radius: 25px;
+    font-size: 13px;
+    color: #FF724C;
+    height: 9vh;
+    width: 25vw;
+    appearance: none;
+    transition: border 0.15s ease 0s;
+    font-size: 50px;
+
+    :focus {
+        outline: none;
+        box-shadow: none;
+        border-color: rgb(100, 153, 255);
+    }
+
+}
+
+.passwordinput {
+
+    padding: 6px 12px;
+    background: #2A2C41;
+    border: 2px solid #FF724C;
+    border-radius: 25px;
+    font-size: 13px;
+    color: #FF724C;
+    height: 9vh;
+    width: 25vw;
+    appearance: none;
+    transition: border 0.15s ease 0s;
+    font-size: 50px;
+
+
+    :focus {
+        outline: none;
+        box-shadow: none;
+        border-color: rgb(100, 153, 255);
+    }
+
+}
+
+.connexionsubmitinput {
+    cursor: pointer;
+    padding: 0 1vw;
+    border-radius: 30px;
+    width: 20vw;
+    height: 9vh;
+    font-size: 30px;
+    background-color: #FF724C;
+    font-weight: bold;
+    color: #2A2C41;
+    font-size: 40px;
+}
+
+::placeholder {
+    color: #ff734c71;
+}
+
+
+
+
+.signupinput {
+    cursor: pointer;
+    padding: 0 20px;
+    border-radius: 30px;
+    width: 18vw;
+    height: 6vh;
+    font-size: 30px;
+    background-color: #ffffff;
+    font-weight: 900;
+    color: #FF724C;
+
+}
+
+@media screen and (max-width: 1100px) {
+    .connexion h1 {
+        font-size: 50px;
+    }
+
+    .connexion p {
+        font-size: 40px;
+    }
+
+    .usernameinput {
+        padding: 6px 12px;
+        background: #2A2C41;
+        border: 2px solid #FF724C;
+        border-radius: 10px;
+        font-size: 13px;
+        color: #FF724C;
+        height: 6vh;
+        width: 35vw;
+        appearance: none;
+        transition: border 0.15s ease 0s;
+
+
+    }
+
+    .passwordinput {
+
+        padding: 6px 12px;
+        background: #2A2C41;
+        border: 2px solid #FF724C;
+        border-radius: 10px;
+        color: #FF724C;
+        height: 6vh;
+        width: 35vw;
+        appearance: none;
+        transition: border 0.15s ease 0s;
+        font-size: 13px;
+
+
+    }
+
+    .connexion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        border: 5px solid black;
+        border-radius: 20px;
+        width: 80vw;
+        height: 80vh;
+        position: absolute;
+        right: 10%;
+        background-color: #f4f4f89c;
+        box-shadow: #ff734c60 2px 5px;
+    }
+
+    .connexionsubmitinput {
+        cursor: pointer;
+        padding: 0 12px;
+        border-radius: 30px;
+        width: 20vw;
+        height: 7vh;
+        font-size: 20px;
+        background-color: #FF724C;
+        font-weight: 700;
+        color: #2A2C41;
+
+    }
+
+    .signupinput {
+        cursor: pointer;
+        padding: 0 5px;
+        border-radius: 30px;
+        width: 19vw;
+        height: 6vh;
+        font-size: 20px;
+        background-color: #ffffff;
+        font-weight: 900;
+        color: #FF724C;
+
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .connexion h1 {
+        font-size: 25px;
+    }
+
+    .connexion h1 span {
+        font-size: 30px;
+    }
+
+    .connexion p {
+        font-size: 20px;
+    }
+
+    .connexion h2 {
+        font-size: 20px;
+    }
+
+    .connexion h2 span {
+        font-size: 25px;
+    }
+
+
+
+    .connexionsubmitinput {
+        cursor: pointer;
+        padding: 0 12px;
+        border-radius: 20px;
+        width: 35vw;
+        height: 7vh;
+        font-size: 14px;
+        background-color: #FF724C;
+        font-weight: 500;
+        color: #2A2C41;
+
+    }
+
+    .signupinput {
+        cursor: pointer;
+        padding: 0 1px;
+        border-radius: 20px;
+        width: 25vw;
+        height: 6vh;
+        font-size: 13px;
+        background-color: #ffffff;
+        font-weight: 900;
+        color: #FF724C;
+
+    }
+}

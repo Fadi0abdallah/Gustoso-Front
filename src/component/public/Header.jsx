@@ -1,7 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../style/header.css';
+import { Link, useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
+
+const isCookes = (access_token) => {
+    return Cookies.get(access_token) !== undefined
+}
 
 const Header = () => {
+    const [isCooke, setIsCooke] = useState(false)
+    const naviate = useNavigate();
+
+    const logOut = () => {
+        Cookies.remove('access_token')
+        naviate("/connexion")
+
+    }
+    useEffect(() => {
+        const haveCookes = isCookes('access_token')
+        setIsCooke(haveCookes)
+    }, [])
     const [isActive, setIsActive] = useState(false);
 
     const handleBurgerClick = () => {
@@ -32,14 +50,22 @@ const Header = () => {
             </nav>
 
             <div className='logoAndbar'>
-                <img className='logoheader' src="../public/logoAndImage/food___beverage-removebg-preview.png" alt="logo" />
+                <img className='logoheader' src="/logoAndImage/food___beverage-removebg-preview.png" alt="logo" />
                 <div className='divsearch'>
-                    <img className='logosearch' src="../public/logoAndImage/search.png" alt="search" />
+                    <img className='logosearch' src="/logoAndImage/search.png" alt="search" />
                 </div>
             </div>
-            <div>
-                <a className='section4' href="#section4">Connexion</a>
+            {isCooke ? <div>
+                <Link to="/profile">profile</Link>
+                {/* <Link to="/logeout">logeout</Link> */}
+                <li onClick={logOut}>logout</li>
+            </div> : <div className='btndiv'>
+                <Link to="/connexion" className='section4' href="#section4">Connexion</Link>
+                <h1>/</h1>
+                <Link to="/signup" className='section5' href="#section4">signUP</Link>
             </div>
+            }
+
         </header>
     );
 };

@@ -30,6 +30,22 @@ header {
     text-align: center;
 }
 
+.section5 {
+    display: flex;
+    border-radius: 20px;
+    background-color: #2A2C41;
+    color: #ff724c;
+    font-size: 20px;
+    padding: 8px 30px;
+    text-align: center;
+}
+
+.btndiv {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
 
 .logoAndbar {
     display: flex;

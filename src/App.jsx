@@ -6,6 +6,7 @@ import SignUpPage from "./page/public/SignUpPage"
 import AdminDashboardPage from "./page/admin/AdminDashboardPage"
 import ListAllRecettePage from "./page/public/ListAllRecettesPage"
 import DeatilRecettePage from "./page/public/DeatilRecettePage"
+import ProfilePage from "./page/public/ProfilePage"
 
 
 
@@ -18,6 +19,8 @@ function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/recettes" element={<ListAllRecettePage />} />
         <Route path="/recettes/deatil/:id" element={<DeatilRecettePage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+
 
 
         {/* Admin */}

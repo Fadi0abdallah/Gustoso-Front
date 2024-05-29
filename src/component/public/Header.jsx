@@ -3,23 +3,49 @@ import '../../style/header.css';
 import { Link, useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
-const isCookes = (access_token) => {
-    return Cookies.get(access_token) !== undefined
-}
+const isCookies = (access_token) => {
+    return Cookies.get(access_token) !== undefined;
+};
 
 const Header = () => {
-    const [isCooke, setIsCooke] = useState(false)
-    const naviate = useNavigate();
+    const [isCookie, setIsCookie] = useState(false);
+    const [profile, setProfile] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     const logOut = () => {
-        Cookies.remove('access_token')
-        naviate("/connexion")
+        Cookies.remove('access_token');
+        navigate("/connexion");
+    };
 
-    }
     useEffect(() => {
-        const haveCookes = isCookes('access_token')
-        setIsCooke(haveCookes)
-    }, [])
+        const haveCookies = isCookies('access_token');
+        setIsCookie(haveCookies);
+
+        if (haveCookies) {
+            fetch("http://localhost:5000/api/users/profile", {
+                credentials: 'include' // This ensures cookies are sent with the request
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Non authentifié');
+                    }
+                    return response.json();
+                })
+                .then((dataProfile) => {
+                    setProfile(dataProfile);
+                    setLoading(false);
+                })
+                .catch((error) => {
+                    setError(error.message);
+                    setLoading(false);
+                });
+        } else {
+            setLoading(false);
+        }
+    }, []);
+
     const [isActive, setIsActive] = useState(false);
 
     const handleBurgerClick = () => {
@@ -28,16 +54,12 @@ const Header = () => {
 
     return (
         <header>
-
-
             <nav>
                 <ul className={`recetteNav ${isActive ? 'active' : ''}`}>
                     <li><a href="#section1">Entrées</a></li>
                     <li><a href="#section2">Plats</a></li>
                     <li><a href="#section3">Desserts</a></li>
-
                 </ul>
-
                 <div
                     onClick={handleBurgerClick}
                     id="burger"
@@ -55,17 +77,23 @@ const Header = () => {
                     <img className='logosearch' src="/logoAndImage/search.png" alt="search" />
                 </div>
             </div>
-            {isCooke ? <div>
-                <Link to="/profile">profile</Link>
-                {/* <Link to="/logeout">logeout</Link> */}
-                <li onClick={logOut}>logout</li>
-            </div> : <div className='btndiv'>
-                <Link to="/connexion" className='section4' href="#section4">Connexion</Link>
-                <h1>/</h1>
-                <Link to="/signup" className='section5' href="#section4">signUP</Link>
-            </div>
-            }
 
+            {loading ? (
+                <p>Loading...</p>
+            ) : isCookie ? (
+                <div>
+                    <Link to="/profile">Profile</Link>
+                    {profile && <h1>Hello, {profile.username}</h1>}
+                    <li onClick={logOut}>Logout</li>
+                </div>
+            ) : (
+                <div className='btndiv'>
+                    <Link to="/connexion" className='section4'>Connexion</Link>
+                    <h1>/</h1>
+                    <Link to="/signup" className='section5'>Sign Up</Link>
+                </div>
+            )}
+            {error && <p>{error}</p>}
         </header>
     );
 };

@@ -32,6 +32,7 @@ const DeatilRecette = () => {
             });
     }, [id]);
 
+
     // Ainsi, lorsque `ingredients.find()` est appelé, il parcourt chaque élément (`ing`) du tableau `ingredients`. Pour chaque élément, il vérifie si sa propriété `id` correspond à l'`ingredientId` fourni. Si une correspondance est trouvée, l'objet ingrédient est retourné et assigné à la variable `ingredient`. Si aucune correspondance n'est trouvée, `ingredient` sera `undefined`.
 
     const getIngredientName = (ingredientId) => {

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../../style/footer.css";
 const Footer = () => {
     return (
@@ -13,18 +14,18 @@ const Footer = () => {
             </section>
             <section className="gridFour">
 
-                <img className="logofooter" src="/logoAndImage/food___beverage-removebg-preview.png" alt="logo" />
+                <Link to="/"> <img className="logofooter" src="/logoAndImage/food___beverage-removebg-preview.png" alt="logo" /></Link>
 
             </section>
 
 
             <nav className="gridThree">
                 <ul>
-                    <li>Entrées</li>
+                    <Link to="/entree"><li>Entrées</li></Link>
                     <li>-</li>
-                    <li>Plats</li>
+                    <Link to="/plat"><li>Plats</li></Link>
                     <li>-</li>
-                    <li>Desserts</li>
+                    <Link to="/dessert"><li>Desserts</li></Link>
                 </ul>
             </nav>
             <nav className="gridFive">

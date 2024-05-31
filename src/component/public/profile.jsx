@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import "../../style/profile.css";
+import { Link, useParams } from "react-router-dom";
 const Profile = () => {
     const [profile, setProfile] = useState(null);
     const [error, setError] = useState(null);
-
+    const { id } = useParams()
     useEffect(() => {
         fetch("http://localhost:5000/api/users/profile", {
             credentials: 'include' // Cela permet de s'assurer que les cookies sont envoyés avec la demande
@@ -16,6 +17,7 @@ const Profile = () => {
             })
             .then((dataProfile) => {
                 setProfile(dataProfile);
+                console.log(dataProfile)
             })
             .catch((error) => {
                 setError(error.message);
@@ -51,6 +53,7 @@ const Profile = () => {
                         <div className='fivediv'>
                             <h2> {profile.username}</h2>
                             <h2>Inscrit depuis : {timecreatedAt}</h2>
+                            <Link to={`/voscontenu/${profile.id}`}>Vos Contenu</Link>
 
                         </div>
                     </div>

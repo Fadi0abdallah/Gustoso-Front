@@ -56,9 +56,10 @@ const Header = () => {
         <header>
             <nav>
                 <ul className={`recetteNav ${isActive ? 'active' : ''}`}>
-                    <li><a href="#section1">Entrées</a></li>
-                    <li><a href="#section2">Plats</a></li>
-                    <li><a href="#section3">Desserts</a></li>
+                    <Link to="/entree"><li><a href="#section1">Entrées</a></li> </Link>
+                    <Link to="/plat"> <li><a href="#section2">Plats</a></li> </Link>
+                    <Link to="/dessert"><li><a href="#section3">Desserts</a></li></Link>
+
                 </ul>
                 <div
                     onClick={handleBurgerClick}
@@ -72,7 +73,7 @@ const Header = () => {
             </nav>
 
             <div className='logoAndbar'>
-                <img className='logoheader' src="/logoAndImage/food___beverage-removebg-preview.png" alt="logo" />
+                <Link to="/"> <img className='logoheader' src="/logoAndImage/food___beverage-removebg-preview.png" alt="logo" /></Link>
                 <div className='divsearch'>
                     <img className='logosearch' src="/logoAndImage/search.png" alt="search" />
                 </div>
@@ -83,7 +84,7 @@ const Header = () => {
             ) : isCookie ? (
                 <div>
                     <Link to="/profile">Profile</Link>
-                    {profile && <h1>Hello, {profile.username}</h1>}
+                    {profile && <h1>Bonjour {profile.username}</h1>}
                     <li onClick={logOut}>Logout</li>
                 </div>
             ) : (

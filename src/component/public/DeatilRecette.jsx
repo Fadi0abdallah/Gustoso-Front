@@ -19,9 +19,9 @@ const DeatilRecette = () => {
         // Fetch ingredients for the recipe
         fetch("http://localhost:5000/api/recetteingredient/by-recette/" + id)
             .then((response) => response.json())
-            .then((dataIngredients) => {
-                console.log(dataIngredients);
-                setDeatilRecetteIngredient(dataIngredients.data);
+            .then((datarecetteIngredients) => {
+                console.log(datarecetteIngredients);
+                setDeatilRecetteIngredient(datarecetteIngredients.data);
             });
 
         fetch("http://localhost:5000/api/ingredient")

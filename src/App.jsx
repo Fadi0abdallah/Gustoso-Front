@@ -12,6 +12,7 @@ import ProfileContenuPage from "./page/public/ProfileContenuPage"
 import EntreePage from "./page/public/categoriesPage/EntreePage"
 import PlatPage from "./page/public/categoriesPage/platPage"
 import DessertPage from "./page/public/categoriesPage/desserPage"
+import CreateRecettePage from "./page/public/CreateRecettePage"
 
 
 
@@ -31,6 +32,8 @@ function App() {
         <Route path="/entree" element={<EntreePage />} />
         <Route path="/plat" element={<PlatPage />} />
         <Route path="/dessert" element={<DessertPage />} />
+
+        <Route path="/newrecette" element={<CreateRecettePage />} />
 
 
 

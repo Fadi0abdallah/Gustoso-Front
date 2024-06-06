@@ -50,9 +50,11 @@ const ReviewsRecettes = () => {
                     <p>{review.comment}</p>
                     <h5>{new Date(review.createdAt).toLocaleDateString()}</h5>
                     {/* Link to all reviews for the current recette */}
-                    <Link to={`/review/${id}`}>All Reviews</Link>
+
                 </article>
             ))}
+            <Link to={`/review/${id}`}>All Reviews</Link>
+
         </section>
     );
 };

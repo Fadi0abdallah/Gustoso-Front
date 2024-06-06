@@ -1,8 +1,8 @@
+import "../../style/footer.css"
 const Accueil = () => {
     return (
         <>
-            <p>Home page</p>
-
+            <img className="bgImage" src="/logoAndImage/pexels.jpg" alt="roma" />
         </>
 
     )

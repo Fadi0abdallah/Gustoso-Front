@@ -59,6 +59,7 @@ const Header = () => {
                     <Link to="/entree"><li><a href="#section1">Entrées</a></li> </Link>
                     <Link to="/plat"> <li><a href="#section2">Plats</a></li> </Link>
                     <Link to="/dessert"><li><a href="#section3">Desserts</a></li></Link>
+                    <Link to="/newrecette"><li><a href="#section4">Ajouter une recette</a></li></Link>
 
                 </ul>
                 <div
@@ -74,9 +75,14 @@ const Header = () => {
 
             <div className='logoAndbar'>
                 <Link to="/"> <img className='logoheader' src="/logoAndImage/food___beverage-removebg-preview.png" alt="logo" /></Link>
-                <div className='divsearch'>
+                {/* <div className='divsearch'>
                     <img className='logosearch' src="/logoAndImage/search.png" alt="search" />
-                </div>
+                </div> */}
+                <label >  <img className='logosearch' src="/logoAndImage/search.png" alt="search" />
+                    <input type="search" id="site-search" name="q" />
+
+                    <button>Search</button>
+                </label>
             </div>
 
             {loading ? (

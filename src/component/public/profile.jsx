@@ -38,7 +38,7 @@ const Profile = () => {
     return (
         <section>
             <article>
-                <h1>Hello, {profile.username}</h1>
+                <h1>Bonjour {profile.username}</h1>
 
             </article>
             <div>

@@ -1,6 +1,7 @@
 import { jwtDecode } from "jwt-decode";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export const useVerifyToken = () => {
     const navigate = useNavigate()
@@ -13,22 +14,14 @@ export const useVerifyToken = () => {
     }
     if (accessToken) {
         decodedToken = jwtDecode(accessToken);
-        console.log(decodedToken)
+        console.log(decodedToken);
+    }
+    useEffect(() => {
 
-        if (!decodedToken.userId) {
-            navigate("/connexion");
+        if (decodedToken.roleId === 3) {
+            navigate("/")
         }
-    } else {
-        navigate("/connexion");
-        // Idéalement, utilisez la date de validé pour re-générer le token quand il est périmé
-        // si le token est périmé et qu'il n'a pas été re-généré : déconnecté l'user
-
-
-    }
-
-    if (decodedToken.RoleId === 3) {
-        navigate("/")
-    }
+    })
 
     return decodedToken
 }

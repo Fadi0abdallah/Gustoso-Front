@@ -1,0 +1,353 @@
+main {
+    background-color: #f4f4f8;
+}
+
+.recetteDetail {
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 45px;
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-flow: row;
+}
+
+.divimage {
+    width: 500px;
+    grid-column: 1 / 4;
+    grid-row: 1 / 4;
+    margin-left: 30px;
+}
+
+.detailImageprofile {
+    width: 50vw;
+    grid-column: 1 / 4;
+    grid-row: 1 / 4;
+    margin-left: 30px;
+    border-radius: 20px;
+}
+
+.articlecontenu {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.servingsH3 {
+    color: #2a2c41;
+    margin-left: 50px;
+}
+
+.detailH1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fdbf50;
+    margin: 15px;
+    text-align: center;
+}
+
+.detailImage {
+    width: 600px;
+    height: 450px;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.h1profile {
+    color: #2a2c41;
+    font-size: 50px;
+    text-align: center;
+}
+
+.detailH3 {
+    font-size: 30px;
+    color: #ff724c;
+    grid-column: 5 / 7;
+    grid-row: 1;
+    margin-top: 60px;
+}
+
+.divdetailH5 {
+    grid-column: 5 / 6;
+    grid-row: 4;
+    display: flex;
+    gap: 20px;
+}
+
+.detailH5 {
+    color: #fdbf50;
+    font-size: 25px;
+}
+
+.detailp {
+    grid-column: 1 / 6;
+    grid-row: 5 / 6;
+    font-size: 25px;
+    margin-left: 30px;
+    margin-right: 30px;
+    color: #2a2c41;
+}
+
+.detailpInfo {
+    display: flex;
+    grid-column: 1 / 6;
+    grid-row: 6;
+    font-size: 20px;
+    color: #2a2c41;
+    font-weight: 700;
+    position: relative;
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+
+h6 {
+    grid-column: 1 / 3;
+    grid-row: 4;
+    color: #fdbf50;
+    font-size: 30px;
+    text-shadow: 1px 1px #2a2c41;
+    position: absolute;
+    bottom: 100px;
+}
+
+.divIngredient {
+    grid-column: 4 / 7;
+    grid-row: 2 / 4;
+    font-size: 25px;
+    font-weight: 700;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.h4Prepartion {
+    color: #ff724c;
+    font-size: 25px;
+    font-weight: 600;
+    grid-column: 1 / 5;
+    grid-row: 4;
+    margin-left: 20px;
+
+    align-content: center;
+
+}
+
+.lineRed {
+    width: 60vw;
+    height: 3px;
+    background-color: #ff724c;
+    margin-left: 200px;
+    margin-bottom: 20px;
+
+}
+
+.h2terminee {
+    color: #ff724c;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    margin-right: 80px;
+}
+
+@media screen and (max-width: 1170px) {
+    .divIngredient {
+        margin-left: 20px;
+        grid-column: 5 / 7;
+    }
+
+    .detailImage {
+        width: 500px;
+        height: 450px;
+        background-size: cover;
+        border-radius: 20px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .recetteDetail {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, auto);
+        gap: 10px;
+        grid-auto-flow: row;
+    }
+
+    .divimage {
+        width: 100%;
+        grid-column: 1 / 5;
+        grid-row: 1 / 2;
+    }
+
+    .detailImage {
+        width: 400px;
+        height: 400px;
+        background-size: cover;
+        border-radius: 20px;
+    }
+
+    .detailH1 {
+        font-size: 25px;
+        grid-column: 1 / 5;
+    }
+
+    .detailH3 {
+        font-size: 18px;
+        grid-column: 1 / 5;
+        grid-row: 2;
+        margin-top: 20px;
+    }
+
+    .divdetailH5 {
+        grid-column: 5;
+        grid-row: 2;
+    }
+
+    .detailp {
+        grid-column: 1 / 5;
+        grid-row: 5;
+    }
+
+    .detailpInfo {
+        grid-column: 1 / 5;
+        grid-row: 6;
+        position: relative;
+        margin-top: 40px;
+
+    }
+
+    h6 {
+        grid-column: 1 / 5;
+        grid-row: 2;
+        position: absolute;
+        bottom: 160px;
+
+    }
+
+    .divIngredient {
+        grid-column: 1 / 5;
+        grid-row: 3 / 4;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .h4Prepartion {
+        color: #ff724c;
+        font-size: 20px;
+        font-weight: 500;
+        grid-column: 1 / 4;
+        grid-row: 4;
+        margin-left: 20px;
+
+        align-content: center;
+
+    }
+}
+
+.articleRecette {
+    border: #2a2c41 5px solid;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 20px;
+    width: 80vw;
+    border-radius: 20px;
+}
+
+.allrecettesection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btndiv {
+    margin-bottom: 20px;
+}
+
+/* Mobile devices */
+@media screen and (max-width: 390px) {
+    .recetteDetail {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, auto);
+        gap: 10px;
+    }
+
+    .divimage {
+        width: 100%;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .detailH1 {
+        font-size: 20px;
+        grid-column: 1 / 2;
+    }
+
+    .detailImage {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .detailH3 {
+        font-size: 16px;
+        grid-column: 1 / 2;
+        grid-row: 2;
+        margin-top: 10px;
+    }
+
+    .divdetailH5 {
+        grid-column: 4;
+        grid-row: 2;
+    }
+
+    .detailH5 {
+        font-size: 20px;
+    }
+
+    .detailp {
+        /* grid-column: 1 / 2; */
+        grid-row: 5;
+        margin-right: 20px;
+
+    }
+
+    .detailpInfo {
+        /* grid-column: 1 / 2; */
+        grid-row: 6;
+        position: relative;
+        margin-right: 20px;
+    }
+
+    h6 {
+        font-size: 20px;
+        grid-column: 1 / 2;
+        grid-row: 2;
+        position: absolute;
+        top: -70px;
+        margin-top: 30px;
+    }
+
+    .divIngredient {
+        grid-column: 1 / 2;
+        grid-row: 3;
+        display: flex;
+        justify-content: flex-start;
+        font-size: 20px;
+
+    }
+
+    .h4Prepartion {
+        color: #ff724c;
+        font-size: 15px;
+        font-weight: 300;
+        grid-column: 1 / 4;
+        grid-row: 4;
+        margin-left: 10px;
+        align-content: center;
+    }
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
+import "../../../style/Css/categories.css"
 const Entree = () => {
     const [entrees, setEntrees] = useState([]);
 
@@ -16,12 +17,12 @@ const Entree = () => {
 
     return (
         <main>
-            <h1>Page entree</h1>
-            <section>
+            <h1 className="h1Categorie">Entrées</h1>
+            <section className="CategorieSection">
                 {entrees.map((entree) => (
-                    <article key={entree.id}>
-                        <h1>{entree.title}</h1>
-                        <img src={entree.imageUrl} alt={entree.title} />
+                    <article className="articleCategorie" key={entree.id}>
+                        <h2 className="h2Categorie">{entree.title}</h2>
+                        <Link to={`/recettes/deatil/${entree.id}`}><img className="Categoriephote" src={entree.imageUrl} alt={entree.title} /></Link>
                     </article>
                 ))}
             </section>

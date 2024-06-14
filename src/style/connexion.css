@@ -10,13 +10,14 @@
 }
 
 .connexion h2 {
-    font-size: 70px;
+    font-size: 60px;
+    text-align: center;
 }
 
 .connexion h2 span {
     color: #FDBF50;
     font-weight: 900;
-    font-size: 80px;
+    font-size: 70px;
 }
 
 .connexion {
@@ -36,7 +37,7 @@
 }
 
 .connexion p {
-    font-size: 65px;
+    font-size: 50px;
     text-align: center;
 }
 
@@ -146,8 +147,12 @@
         font-size: 50px;
     }
 
-    .connexion p {
+    .connexion h2 {
         font-size: 40px;
+    }
+
+    .connexion p {
+        font-size: 35px;
     }
 
     .usernameinput {
@@ -234,7 +239,7 @@
     }
 
     .connexion p {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .connexion h2 {

@@ -1,0 +1,99 @@
+.CategorieSection {
+    display: flex;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: all 2s ease-in-out;
+
+}
+
+.articleCategorie {
+    width: 600px;
+    height: 350px;
+    margin: 30px;
+    text-align: center;
+
+}
+
+.articleCategorie:hover {
+    box-shadow: 1px 2px rgb(253, 191, 80);
+    border-radius: 20px;
+    transform: translate(1px, 1%);
+}
+
+.Categoriephote {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.h2Categorie {
+    font-size: 30px;
+    color: #fdbf50;
+    text-shadow: 1px 1px #2a2c41;
+    font-weight: 700;
+    margin: 20px;
+
+}
+
+.h1Categorie {
+    text-align: center;
+    color: #2a2c41;
+    text-shadow: 1px 1px #fdbf50;
+    font-size: 50px;
+
+}
+
+@media screen and (max-width: 768px) {
+    .articleCategori {
+        width: 400px;
+        height: 300px;
+        margin: 25px;
+        text-align: center;
+
+    }
+
+    .Categoriephote {
+
+        height: 250px;
+        background-size: cover;
+        border-radius: 20px;
+    }
+
+    .h2Categorie {
+        font-size: 20px;
+        color: #fdbf50;
+        text-shadow: 1px 1px #2a2c41;
+        font-weight: 500;
+        margin: 15px;
+
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .articleCategori {
+        width: 300px;
+        height: 250px;
+        margin: 20px;
+        text-align: center;
+
+    }
+
+    .Categoriephote {
+
+        height: 200px;
+        background-size: cover;
+        border-radius: 20px;
+    }
+
+    .h2Categorie {
+        font-size: 15px;
+        color: #fdbf50;
+        text-shadow: 1px 1px #2a2c41;
+        font-weight: 500;
+        margin: 10px;
+    }
+}

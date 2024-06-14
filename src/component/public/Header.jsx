@@ -46,6 +46,15 @@ const Header = () => {
         }
     }, []);
 
+
+    const handleRecetteSearch = (event) => {
+        event.preventDefault();
+        const searchRecettebyname = event.target.searchRecette.value;
+        navigate(`/recette-search/${searchRecettebyname}`);
+    };
+
+
+
     const [isActive, setIsActive] = useState(false);
 
     const handleBurgerClick = () => {
@@ -59,7 +68,10 @@ const Header = () => {
                     <Link to="/entree"><li><a href="#section1">Entrées</a></li> </Link>
                     <Link to="/plat"> <li><a href="#section2">Plats</a></li> </Link>
                     <Link to="/dessert"><li><a href="#section3">Desserts</a></li></Link>
-                    <Link to="/newrecette"><li><a href="#section4">Ajouter une recette</a></li></Link>
+                    {isCookie &&
+                        <Link to="/newrecette"><li><a href="#section4">Ajouter une recette</a></li></Link>
+
+                    }
 
                 </ul>
                 <div
@@ -75,32 +87,37 @@ const Header = () => {
 
             <div className='logoAndbar'>
                 <Link to="/"> <img className='logoheader' src="/logoAndImage/food___beverage-removebg-preview.png" alt="logo" /></Link>
-                {/* <div className='divsearch'>
-                    <img className='logosearch' src="/logoAndImage/search.png" alt="search" />
-                </div> */}
-                <label >  <img className='logosearch' src="/logoAndImage/search.png" alt="search" />
-                    <input type="search" id="site-search" name="q" />
 
-                    <button>Search</button>
-                </label>
+                <div>
+                    <form className='searchForm' onSubmit={handleRecetteSearch}>
+                        <label className='search-box'>
+                            <button className='search-btn' ><img className='logosearch' src="/logoAndImage/search.png" alt="search" /></button>
+
+                            <input type="search" id="site-search" name="searchRecette" />
+                        </label>
+                    </form>
+                </div>
+
             </div>
 
             {loading ? (
                 <p>Loading...</p>
             ) : isCookie ? (
-                <div>
-                    <Link to="/profile">Profile</Link>
-                    {profile && <h1>Bonjour {profile.username}</h1>}
-                    <li onClick={logOut}>Logout</li>
-                </div>
+                <>
+                    <div className='profileLogout'>
+                        <Link to="/profile"><img className='logoprofile' src="/logoAndImage/profile.png" alt="search" />
+                            {profile && <h2 className='h2profile'>Bonjour {profile.username}</h2>}</Link>
+                    </div>
+                    <li onClick={logOut}><img className='logosearch' src="/logoAndImage/se-deconnecter.png" alt="logout" /></li>
+                </>
+
             ) : (
                 <div className='btndiv'>
                     <Link to="/connexion" className='section4'>Connexion</Link>
-                    <h1>/</h1>
                     <Link to="/signup" className='section5'>Sign Up</Link>
                 </div>
             )}
-            {error && <p>{error}</p>}
+            {error && <p className='error'>{error}</p>}
         </header>
     );
 };

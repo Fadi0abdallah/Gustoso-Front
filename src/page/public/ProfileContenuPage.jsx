@@ -1,8 +1,14 @@
+import Footer from "../../component/public/Footer"
+import Header from "../../component/public/Header"
 import ProfileContenu from "../../component/public/ProfileContenu"
 
 const ProfileContenuPage = () => {
     return (
-        <ProfileContenu />
+        <>
+            <Header />
+            <ProfileContenu />
+            <Footer />
+        </>
 
     )
 }

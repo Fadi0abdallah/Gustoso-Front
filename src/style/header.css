@@ -8,16 +8,53 @@
 }
 
 header {
-    padding: 0 20px 0 20px;
+    padding: 0 20px;
     background-color: #f4f4f8a4;
     display: flex;
     align-items: center;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     justify-content: space-around;
+}
 
+#site-search {
+    transition: width 0.7s;
+    background-color: #2f3640;
+    height: 40px;
+    border-radius: 60px;
+    color: #bc4747;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    line-height: 40px;
+    width: 0;
+    margin-bottom: 10px;
+}
 
+.search-box:hover #site-search {
+    width: 200px;
+    padding: 0 6px;
+    background: #2A2C41;
+    color: #bc4747;
+}
+
+.search-box:hover .search-btn {
+    background: #bc4747;
+}
+
+.search-btn {
+    color: #bc4747;
+    width: 45px;
+    height: 45px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .section4 {
@@ -44,8 +81,32 @@ header {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
+.profileLogout {
+    display: flex;
+    gap: 20px;
+    flex-flow: wrap-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.h2profile {
+    color: #bc4747;
+    font-size: 30px;
+}
+
+.logoprofile {
+    width: 45px;
+    height: 45px;
+    margin-left: 4vw;
+}
+
+.logosearch {
+    width: 45px;
+    height: 45px;
+}
 
 .logoAndbar {
     display: flex;
@@ -59,22 +120,19 @@ header {
 }
 
 .logosearch {
-    width: 40px;
-    height: 35px;
-    margin: 5px;
+    width: 45px;
+    height: 45px;
 }
 
 .divsearch {
     width: 300px;
     height: 50px;
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffffb3;
     border-radius: 50px;
     border: 2px solid black;
     display: flex;
     align-items: center;
-
 }
-
 
 .recetteNav {
     display: flex;
@@ -98,17 +156,9 @@ a {
     color: #2a2c41;
     text-decoration: none;
     transition: all ease 0.5s;
-    font-size: 30px;
+    font-size: 35px;
+    font-weight: 600;
 }
-
-/* .recetteNav li:last-of-type {
-    border: dashed 1px white;
-}
-
-.recetteNav li:last-of-type:hover {
-    border-color: #ff724c;
-    cursor: pointer;
-} */
 
 .recetteNav li:last-of-type:hover a,
 a:hover {
@@ -116,7 +166,6 @@ a:hover {
 }
 
 @media screen and (max-width: 1200px) {
-
     #burger {
         display: block;
         cursor: pointer;
@@ -160,7 +209,6 @@ a:hover {
         position: absolute;
         top: 150px;
         left: 80px;
-
         background-color: #ffffff;
         padding: 20px;
     }
@@ -174,7 +222,6 @@ a:hover {
     }
 }
 
-/* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .logoheader {
         width: 150px;
@@ -192,12 +239,53 @@ a:hover {
     }
 
     .recetteNav {
+        display: none;
+        position: absolute;
+        top: 100px;
+        left: 8px;
+        background-color: #ffffffb3;
+        padding: 8px;
+    }
+
+    .recetteNav.active {
+        display: flex;
         flex-direction: column;
         gap: 10px;
     }
 
     .recetteNav li {
         padding: 5px;
+    }
+
+    a {
+        font-size: 25px;
+    }
+
+    #site-search {
+        height: 30px;
+    }
+
+    .search-box:hover #site-search {
+        width: 150px;
+    }
+
+    .search-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 30px;
+    }
+
+    .profileLogout {
+        gap: 20px;
+    }
+
+    .h2profile {
+        font-size: 20px;
+    }
+
+    .logosearch {
+        width: 40px;
+        height: 40px;
     }
 }
 
@@ -210,8 +298,10 @@ a:hover {
     .divsearch {
         width: 80%;
         height: 35px;
+    }
 
-
+    .btndiv {
+        gap: 1rem;
     }
 
     .logosearch {
@@ -220,11 +310,52 @@ a:hover {
     }
 
     .recetteNav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 1px;
+        background-color: #ffffff;
+        padding: 8px;
         flex-direction: column;
         gap: 5px;
+    }
+
+    .recetteNav.active {
+        display: flex;
     }
 
     .recetteNav li {
         padding: 5px;
     }
+
+    a {
+        font-size: 20px;
+    }
+
+    .section4,
+    .section5 {
+        font-size: 15px;
+        padding: 7px 20px;
+        border-radius: 15px;
+    }
+
+    .search-box:hover #site-search {
+        width: 80px;
+    }
+
+    #site-search {
+        height: 30px;
+    }
+
+    .search-btn {
+        width: 30px;
+        height: 30px;
+        border-radius: 20px;
+    }
+}
+
+.error {
+    color: #bc4747;
+    font-size: large;
+    font-weight: 700;
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-
+import "../../style/Css/review.css"
 const ReviewsRecettes = () => {
     const [reviews, setReviews] = useState([]);
     const { id } = useParams();
@@ -38,22 +38,22 @@ const ReviewsRecettes = () => {
     }
 
     return (
-        <section>
-            <p>Commentaire Page</p>
-            <div>Donnez votre avis</div>
+        <section className="sectioncard">
+
 
             {reviews.map((review) => (
-                <article key={review.id}>
-                    <div>{review.User ? review.User.username.slice(0, 2) : 'NN'}</div>
-                    <h2>{review.User ? review.User.username : 'Unknown User'}</h2>
-                    <div>like</div>
-                    <p>{review.comment}</p>
-                    <h5>{new Date(review.createdAt).toLocaleDateString()}</h5>
+                <article key={review.id} className="card">
+                    <div className="avatar"><p>{review.User ? review.User.username.slice(0, 2) : 'NN'}</p></div>
+                    <h2 className="h2card">{review.User ? review.User.username : 'Unknown User'}</h2>
+                    <p className="pcard">{review.comment}</p>
+                    <div className="divrating"><p className="prating"> Reting {review.rating}</p>
+                    </div>
+                    <h5 className="dateReview">{new Date(review.createdAt).toLocaleDateString()}</h5>
                     {/* Link to all reviews for the current recette */}
 
                 </article>
             ))}
-            <Link to={`/review/${id}`}>All Reviews</Link>
+            {/* <Link to={`/review/${id}`}>All Reviews</Link> */}
 
         </section>
     );

@@ -36,11 +36,7 @@ const Profile = () => {
     //Extraction de la première chambre jusqu'à un dixième du temps
     const timecreatedAt = profile.createdAt.slice(0, 10);
     return (
-        <section>
-            <article>
-                <h1>Bonjour {profile.username}</h1>
-
-            </article>
+        <section className="sectionprofile">
             <div>
                 <div className="onediv">
                     <div className="twodiv">
@@ -51,8 +47,8 @@ const Profile = () => {
                             MON PROFIL
                         </div>
                         <div className='fivediv'>
-                            <h2> {profile.username}</h2>
-                            <h2>Inscrit depuis : {timecreatedAt}</h2>
+                            <h2 className="h2fivediv"> {profile.username}</h2>
+                            <h2 className="h2fivediv">Inscrit depuis : {timecreatedAt}</h2>
                             <Link to={`/voscontenu/${profile.id}`}>Vos Contenu</Link>
 
                         </div>

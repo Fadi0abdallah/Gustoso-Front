@@ -97,19 +97,23 @@ const profileContenu = () => {
                 </article>
             ))}
             <h1 className="h1profile">Vos Reviews</h1>
-            {reviews.map((review) => (
-                <article key={review.id} className="card">
-                    <h2 className="h2cardProfile">{review.Recette ? review.Recette.title : 'Unknown Recette'}</h2>
-                    <p className="pcard">{review.comment}</p>
-                    <div className="divrating"><p className="prating"> Reting {review.rating}</p></div>
-                    <h5 className="dateReview">{new Date(review.createdAt).toLocaleDateString()}</h5>
-                    <div className="btndiv">
 
-                        <Link to={`/profile/review/update/${review.id}`}> <button className="btn modify-btn" >modify</button></Link>
-                        <button className="btn delete-btn" onClick={(event) => handleDeleteReview(event, review.id)}>Delete</button>
-                    </div>
-                </article>
-            ))}
+            <div className="divAllReview">
+
+                {reviews.map((review) => (
+                    <article key={review.id} className="card">
+                        <h2 className="h2cardProfile">{review.Recette ? review.Recette.title : 'Unknown Recette'}</h2>
+                        <p className="pcard">{review.comment}</p>
+                        <div className="divrating"><p className="prating"> Reting {review.rating}</p></div>
+                        <h5 className="dateReview">{new Date(review.createdAt).toLocaleDateString()}</h5>
+                        <div className="btndiv">
+                            <Link to={`/profile/update/review/${review.id}`}> <button className="btn modify-btn" >modify</button></Link>
+                            <button className="btn delete-btn" onClick={(event) => handleDeleteReview(event, review.id)}>Delete</button>
+                        </div>
+                    </article>
+                ))}
+            </div>
+
         </section>
     );
 };

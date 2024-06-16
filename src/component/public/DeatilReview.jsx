@@ -50,21 +50,26 @@ const DetailReview = () => {
 
     return (
         <section>
-            <h1>Hello Recette</h1>
             <article key={recette.id}>
-                <h1>{recette.title}</h1>
-                <img src={recette.imageUrl} alt={recette.title} />
-            </article>
+                <div className='divimage'>
+                    <h1 className="detailH1">{recette.title}</h1>
+                    <img className='divimage' src={recette.imageUrl} alt={recette.title} />
+                </div>
 
+            </article>
             {reviews.map((review) => (
-                <article key={review.id}>
-                    <div>{review.User ? review.User.username.slice(0, 2) : 'NN'}</div>
-                    <h2>{review.User ? review.User.username : 'Unknown User'}</h2>
-                    <div>like</div>
-                    <p>{review.comment}</p>
-                    <h5>{new Date(review.createdAt).toLocaleDateString()}</h5>
+                <article key={review.id} className="card">
+                    <div className="avatar"><p>{review.User ? review.User.username.slice(0, 2) : 'NN'}</p></div>
+                    <h2 className="h2card">{review.User ? review.User.username : 'Unknown User'}</h2>
+                    <p className="pcard">{review.comment}</p>
+                    <div className="divrating"><p className="prating"> Reting {review.rating}</p>
+                    </div>
+                    <h5 className="dateReview">{new Date(review.createdAt).toLocaleDateString()}</h5>
+
+
                 </article>
             ))}
+
         </section>
     );
 };

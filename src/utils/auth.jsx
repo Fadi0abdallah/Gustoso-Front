@@ -14,7 +14,6 @@ export const useVerifyToken = () => {
     }
     if (accessToken) {
         decodedToken = jwtDecode(accessToken);
-        console.log(decodedToken);
     }
     useEffect(() => {
 
@@ -22,6 +21,5 @@ export const useVerifyToken = () => {
             navigate("/")
         }
     })
-
     return decodedToken
 }

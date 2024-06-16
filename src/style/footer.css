@@ -89,9 +89,6 @@ footer {
     gap: 2rem;
 }
 
-/* Responsive Styles */
-
-/* For screens with a maximum width of 768px */
 @media screen and (max-width: 768px) {
     footer {
         grid-template-columns: 1fr;
@@ -139,7 +136,7 @@ footer {
     }
 }
 
-/* For screens with a maximum width of 390px */
+
 @media screen and (max-width: 390px) {
     .gridThree {
         font-size: 20px;
@@ -154,11 +151,17 @@ footer {
         height: 100px;
     }
 
+    .gridThree {
+        font-size: 15px;
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+
     .socialmedia li img {
-        width: 20vw;
+        width: 15vw;
     }
 
     .gridOne h1 {
-        font-size: 25px;
+        font-size: 20px;
     }
 }

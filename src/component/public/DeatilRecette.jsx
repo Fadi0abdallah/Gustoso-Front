@@ -58,7 +58,7 @@ const DeatilRecette = () => {
                             <h4 className='h4Prepartion'>Prépartion des {deatilRecette.title} de Gustoso</h4>
                             <p className='detailp'>{deatilRecette.preparation}</p>
 
-                            <p className='detailpInfo'><h6>Info</h6> {deatilRecette.descriptionProduit}</p>
+                            <p className='detailpInfo'> {deatilRecette.descriptionProduit}</p>
 
 
                             {deatilRecetteIngredient && deatilRecetteIngredient.length > 0 ? (

@@ -1,6 +1,5 @@
-/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+
     background-color: #f4f4f9;
     color: #333;
     margin: 0;
@@ -39,10 +38,24 @@ body {
 }
 
 label {
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 5px;
     font-weight: bold;
     font-size: 1.5em;
+}
+
+.textTitle {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: solid 3px #2A2C41;
+    border-radius: 15px;
+    width: 20vw;
+    color: #ffb39e;
+    font-size: 1.4em;
+    height: 7vh;
+    resize: none;
+    overflow: auto;
 }
 
 .form-group input[type="text"],
@@ -53,9 +66,9 @@ select {
     padding: 10px;
     border: solid 3px #2A2C41;
     border-radius: 15px;
-    width: 20vw;
+
     color: #ffb39e;
-    font-size: 1.6em;
+    font-size: 1.3em;
     height: 7vh;
     resize: none;
     overflow: auto;
@@ -233,7 +246,7 @@ button:hover {
     textarea,
     select {
         width: calc(100% - 20px);
-        font-size: 1.4em;
+        font-size: 1.1sem;
     }
 
     .form-group label {

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-
+import "../../style/Css/random.css"
+import { Link } from "react-router-dom";
 const RandomRecette = () => {
     const [random, setRandom] = useState(null);
 
@@ -9,12 +10,14 @@ const RandomRecette = () => {
         })
             .then((response) => response.json())
             .then((randomData) => {
-                console.log(randomData.data);
-                if (Array.isArray(randomData.data)) {
-                    setRandom(randomData.data);
+
+                if (randomData.data && randomData.data.Recette) {
+                    setRandom(randomData.data.Recette);
                 } else {
-                    console.error("Expected an array but got:", randomData.data);
+                    console.error("Expected an object with Recette property but got:", randomData.data);
                 }
+                console.log(setRandom);
+
             })
             .catch((error) => {
                 console.error("Error fetching random recipes:", error);
@@ -22,18 +25,20 @@ const RandomRecette = () => {
     }, []);
 
     return (
-        <section>
-            {
-                random ? (
+        <section className="sectionRandom">
+            {random ? (
 
-                    <article >
-                        <img src={dom.Recette.imageUrl} alt={dom.Recette.title} />
-                        <p>{dom.Recette.title}</p>
-                    </article>
-                ) : (
-                    <p>No random recipes available.</p>
-                )
-            }
+                <article className="articlRandom">
+                    <Link to={`/recettes/deatil/${random.id}`}>
+                        <img className="imgRandom" src={random.imageUrl} alt={random.title} />
+                        <p className="pRandom">{random.title}</p>
+                    </Link>
+                </article>
+
+
+            ) : (
+                <p className="pRandom">No random recipes available.</p>
+            )}
         </section>
     );
 };

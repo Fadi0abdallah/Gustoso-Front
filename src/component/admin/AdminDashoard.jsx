@@ -22,12 +22,9 @@ const AdminDashboard = () => {
                     </ul> : useEffect(() => {
                         navigate("/")
                     })
-
                 }
             </div>
         </main>
-
     )
-
 }
 export default AdminDashboard

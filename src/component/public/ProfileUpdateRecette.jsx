@@ -1,15 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useVerifyToken } from "../../utils/auth";
-import "../../style/Css/detailRecette.css"
-const UpdateRecetteProfile = () => {
+import "../../style/Css/detailRecette.css";
+
+const UpdateRecetteAdmin = () => {
     const [recettes, setRecettes] = useState(null);
     const [ingredients, setIngredients] = useState([]);
     const [selectedIngredients, setSelectedIngredients] = useState([]);
     const [categories, setCategories] = useState([]);
     const { id } = useParams();
     const navigate = useNavigate();
+    const [detailRecetteIngredient, setDetailRecetteIngredient] = useState([]);
+    const [needRefresh, setNeedRefresh] = useState(false);
 
+
+    const decodedToken = useVerifyToken();
+    useEffect(() => {
+        if (!decodedToken) {
+            navigate("/");
+        }
+    }, [decodedToken, navigate]);
 
     useEffect(() => {
         fetch(`http://localhost:5000/api/recettes/${id}`, { method: "GET" })
@@ -21,7 +31,12 @@ const UpdateRecetteProfile = () => {
                     setSelectedIngredients(dataRecettes.data.ingredients);
                 }
             });
-
+        fetch(`http://localhost:5000/api/recetteingredient/by-recette/${id}`)
+            .then((response) => response.json())
+            .then((datarecetteIngredients) => {
+                console.log(datarecetteIngredients);
+                setDetailRecetteIngredient(datarecetteIngredients.data);
+            });
         fetch("http://localhost:5000/api/ingredient", { method: "GET" })
             .then((response) => response.json())
             .then((dataIngredient) => {
@@ -33,8 +48,38 @@ const UpdateRecetteProfile = () => {
             .then((dataCategories) => {
                 setCategories(dataCategories.data);
             });
-    }, [id]);
+    }, [id, needRefresh]);
 
+    const getIngredientName = (ingredientId) => {
+        const ingredient = ingredients.find(ing => ing.id === ingredientId);
+        return ingredient ? ingredient.nom : 'Ingrédient inconnu';
+    };
+    const handleCreateRecetteIngredients = (recetteId) => {
+        selectedIngredients.forEach((ingredient) => {
+            const recetteIngredient = {
+                IngredientId: ingredient.id,
+                RecetteId: recetteId,
+                quantity: ingredient.quantity,
+                unit: ingredient.unit
+            };
+
+            fetch("http://localhost:5000/api/recetteingredient", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(recetteIngredient),
+                credentials: 'include'
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        });
+    };
     const handleUpdateRecette = (event) => {
         event.preventDefault();
 
@@ -62,7 +107,10 @@ const UpdateRecetteProfile = () => {
             .then((response) => response.json())
             .then((data) => {
                 handleUpdateRecetteIngredients(id);
-                navigate("/admin/recette");
+                const recetteId = data.data.id;
+                handleCreateRecetteIngredients(recetteId);
+                navigate(`/voscontenu/${decodedToken.userId}`);
+
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -96,6 +144,27 @@ const UpdateRecetteProfile = () => {
         });
     };
 
+    const handleDeleteIngredientRecette = (recetteingredientId) => {
+        fetch(`http://localhost:5000/api/recetteingredient/${recetteingredientId}`, {
+            method: "DELETE",
+            credentials: "include"
+        })
+            .then((response) => {
+                setNeedRefresh(!needRefresh);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    };
+
+    const handleAddIngredient = (ingredient) => {
+        setSelectedIngredients(prevSelectedIngredients => [...prevSelectedIngredients, ingredient]);
+    };
+
+    const handleRemoveIngredient = (ingredientId) => {
+        setSelectedIngredients(prevSelectedIngredients => prevSelectedIngredients.filter(ing => ing.id !== ingredientId));
+    };
+
     const handleIngredientChange = (event, ingredient) => {
         const { name, value } = event.target;
         setSelectedIngredients(prevSelectedIngredients => {
@@ -109,23 +178,20 @@ const UpdateRecetteProfile = () => {
             }
         });
     };
-    const decodedToken = useVerifyToken()
-    useEffect(() => {
-        if (!decodedToken || !(decodedToken.roleId === 1)) {
-            navigate("/Admin");
-        }
-    }, [decodedToken, navigate]);
+
+
+
     return (
         <section>
-            {decodedToken && (decodedToken.roleId === 1 || decodedToken.roleId === 2) && (
+            {decodedToken && (decodedToken.roleId === 1 || decodedToken.roleId === 2 || decodedToken.roleId === 3) && (
                 <>
                     <h2>Update Recette</h2>
                     {recettes ? (
                         <form onSubmit={handleUpdateRecette}>
-                            <div>
+                            <div className="form-group">
                                 <label>
                                     Title
-                                    <input type="text" name="title" defaultValue={recettes.title} required />
+                                    <input className="textTitle" type="text" name="title" defaultValue={recettes.title} required />
                                 </label>
                             </div>
                             <div>
@@ -134,7 +200,7 @@ const UpdateRecetteProfile = () => {
                                     <input type="number" name="servings" defaultValue={recettes.servings} required />
                                 </label>
                             </div>
-                            <div>
+                            <div className="form-group">
                                 <label>
                                     Temps Total
                                     <input type="text" name="tempsTotal" defaultValue={recettes.tempsTotal} required />
@@ -177,10 +243,23 @@ const UpdateRecetteProfile = () => {
                             <div>
                                 <label>
                                     Photo
-                                    <input type="file" name="imageUrl" accept="image/*" /> {/* Ensure this matches */}
+                                    <input type="file" name="imageUrl" accept="image/*" />
                                 </label>
                             </div>
-
+                            {detailRecetteIngredient && detailRecetteIngredient.length > 0 ? (
+                                <div className='divIngredient'>
+                                    <ul>
+                                        {detailRecetteIngredient.map((ingredient) => (
+                                            <li key={ingredient.id}>
+                                                {getIngredientName(ingredient.IngredientId)} - {ingredient.quantity} {ingredient.unit}
+                                                <button type="button" onClick={() => handleDeleteIngredientRecette(ingredient.id)}>Delete</button>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ) : (
+                                <p>Aucun ingrédient trouvé pour cette recette.</p>
+                            )}
                             <h3>Ingredients</h3>
                             <input
                                 type="text"
@@ -201,7 +280,6 @@ const UpdateRecetteProfile = () => {
                                     </div>
                                 ))}
                             </div>
-
                             <h3>Selected Ingredients</h3>
                             <div className='ingredient-results'>
                                 {selectedIngredients.map((ingredient) => (
@@ -231,9 +309,7 @@ const UpdateRecetteProfile = () => {
                                     </div>
                                 ))}
                             </div>
-
-                            <button className='submit-button' type="submit">Mettre à jour</button>
-
+                            <button type="submit">Mettre à jour</button>
                         </form>
                     ) : (
                         <p>Loading . . .</p>
@@ -244,4 +320,4 @@ const UpdateRecetteProfile = () => {
     );
 };
 
-export default UpdateRecetteProfile;
+export default UpdateRecetteAdmin;

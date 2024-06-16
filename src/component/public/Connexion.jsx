@@ -35,7 +35,7 @@ const Connexion = () => {
     };
     return (
         <>
-            <p>{message}</p>
+            <p className='message'>{message}</p>
             <section className='sectionConnexion'>
                 <form className="connexion" onSubmit={handleConnexionSubmit} >
 

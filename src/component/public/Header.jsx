@@ -25,7 +25,7 @@ const Header = () => {
 
         if (haveCookies) {
             fetch("http://localhost:5000/api/users/profile", {
-                credentials: 'include' // This ensures cookies are sent with the request
+                credentials: 'include'
             })
                 .then((response) => {
                     if (!response.ok) {

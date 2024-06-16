@@ -24,6 +24,7 @@ import CreateReviewPage from "./page/public/CreateReviewPage"
 import RecetteSearchPage from "./page/public/RecetteSearchPage"
 import CreateIngredientPage from "./page/public/CreateIngredientPage"
 import ProfileUpdateRecette from "./page/public/ProfileUpdateRecette"
+import ProfileUpdateReviewPage from "./page/public/ProfileUpdateReviewPage"
 
 
 
@@ -39,6 +40,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/voscontenu/:id" element={<ProfileContenuPage />} />
         <Route path="/profile/update/recette/:id" element={<ProfileUpdateRecette />} />
+        <Route path="/profile/update/review/:id" element={<ProfileUpdateReviewPage />} />
         <Route path="/review/create" element={<CreateReviewPage />} />
         <Route path="/review/:id" element={<DeatilReviewPage />} />
         <Route path="/entree" element={<EntreePage />} />
@@ -58,8 +60,6 @@ function App() {
         <Route path="/admin/recette/update/:id" element={<UpdateRecetteAdmPage />} />
         <Route path="/admin/review" element={<ListAllReviwesPageAdm />} />
         <Route path="/admin/review/update/:id" element={<UpdateReviewAdminPage />} />
-
-
         <Route path="/admin/ingredient" element={<ListAllIngredientsPageAdm />} />
       </Routes>
     </BrowserRouter>

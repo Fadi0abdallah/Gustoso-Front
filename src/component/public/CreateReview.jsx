@@ -1,18 +1,25 @@
-import { useNavigate, useParams } from "react-router-dom";
-import "../../style/Css/review.css"
+import { Link, useParams } from "react-router-dom";
+import "../../style/Css/review.css";
+import Cookies from 'js-cookie';
+
+const isCookiePresent = (access_token) => {
+    return Cookies.get(access_token) !== undefined;
+};
+
 const CreateReview = () => {
-    const navigate = useNavigate();
-    const { id } = useParams()
+    const { id } = useParams();
+    const access_token = 'access_token'; // Assurez-vous que c'est le bon nom pour le cookie
+    const isCookie = isCookiePresent(access_token);
+
     const handleCreateReview = (event) => {
         event.preventDefault();
         const comment = event.target.comment.value;
         const rating = event.target.rating.value;
-        const RecetteId = event.target.RecetteId.value;
 
         const jsonReviewData = {
             comment: comment,
             rating: rating,
-            RecetteId: RecetteId  // Include RecetteId in the request body
+            RecetteId: id // Utiliser directement l'id de useParams
         };
 
         fetch(`http://localhost:5000/api/review`, {
@@ -21,42 +28,39 @@ const CreateReview = () => {
                 "Content-type": "application/json"
             },
             body: JSON.stringify(jsonReviewData),
-            credentials: "include",  // Include credentials for authentication
+            credentials: "include"
         })
             .then((response) => response.json())
             .then((data) => {
                 if (data.message) {
-                    navigate("/recettes/deatil/" + id);
+                    // Recharger la page actuelle
+                    window.location.reload();
                 } else {
-                    throw new Error('Error creating review');
+                    throw new Error('Erreur lors de la création de l\'avis');
                 }
             })
             .catch((error) => {
-                console.error("Error creating review:", error);
+                console.error("Erreur lors de la création de l'avis :", error);
             });
     };
 
     return (
-        <main >
-
-            <form className="formreview" onSubmit={handleCreateReview}>
-                <div className="divreview">
-                    <textarea className="comment" type="text" placeholder="Comment ici" name="comment" required />
-                </div>
-                <div className="recetteid">
-                    <label>
-                        RecetteId:
-                        <input type="number" name="RecetteId" required defaultValue={id} />
-                    </label>
-                </div>
-                <div className="retinSubmit">
-                    <input className="review-btn" type="submit" value="Submit" />
-                    <input type="number" className="ratin" name="rating" placeholder=" Rating" required min="1" max="5" />
-                </div>
-
-            </form>
+        <main>
+            <Link className="allCom" to={`/review/${id}`}> Tous les commentaires</Link>
+            {isCookie ? (
+                <form className="formreview" onSubmit={handleCreateReview}>
+                    <div className="divreview">
+                        <textarea className="comment" type="text" placeholder="Commentaire ici" name="comment" required />
+                    </div>
+                    <div className="retinSubmit">
+                        <input className="review-btn" type="submit" value="Envoyer" />
+                        <input type="number" className="ratin" name="rating" placeholder="Note" required min="1" max="5" />
+                    </div>
+                </form>
+            ) : (
+                <p className="pasReview">Veuillez vous connecter pour laisser un avis.</p>
+            )}
         </main>
-
     );
 };
 

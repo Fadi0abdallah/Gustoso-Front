@@ -34,7 +34,7 @@ const ReviewsRecettes = () => {
 
 
     if (reviews.length === 0) {
-        return <p>Aucun commentaire sur cette recette</p>;
+        return <p className="pReview">Aucun commentaire sur cette recette</p>;
     }
 
     return (
@@ -49,11 +49,11 @@ const ReviewsRecettes = () => {
                     <div className="divrating"><p className="prating"> Reting {review.rating}</p>
                     </div>
                     <h5 className="dateReview">{new Date(review.createdAt).toLocaleDateString()}</h5>
-                    {/* Link to all reviews for the current recette */}
+
 
                 </article>
             ))}
-            {/* <Link to={`/review/${id}`}>All Reviews</Link> */}
+
 
         </section>
     );

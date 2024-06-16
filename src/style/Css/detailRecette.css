@@ -13,7 +13,7 @@ main {
 }
 
 .divimage {
-    width: 500px;
+    width: 60vw;
     grid-column: 1 / 4;
     grid-row: 1 / 4;
     margin-left: 30px;
@@ -103,15 +103,6 @@ main {
 
 }
 
-h6 {
-    grid-column: 1 / 3;
-    grid-row: 4;
-    color: #fdbf50;
-    font-size: 30px;
-    text-shadow: 1px 1px #2a2c41;
-    position: absolute;
-    bottom: 100px;
-}
 
 .divIngredient {
     grid-column: 4 / 7;
@@ -175,7 +166,7 @@ h6 {
     }
 
     .divimage {
-        width: 100%;
+        width: 60vw;
         grid-column: 1 / 5;
         grid-row: 1 / 2;
     }
@@ -217,13 +208,7 @@ h6 {
 
     }
 
-    h6 {
-        grid-column: 1 / 5;
-        grid-row: 2;
-        position: absolute;
-        bottom: 160px;
 
-    }
 
     .divIngredient {
         grid-column: 1 / 5;
@@ -270,6 +255,10 @@ h6 {
 
 /* Mobile devices */
 @media screen and (max-width: 390px) {
+    .sectionRecette {
+        margin-left: 50px;
+    }
+
     .recetteDetail {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(8, auto);
@@ -277,14 +266,17 @@ h6 {
     }
 
     .divimage {
-        width: 100%;
-        grid-column: 1 / 2;
+        width: 50vw;
+        grid-column: 1/2;
         grid-row: 1 / 2;
+        margin-left: 0;
     }
 
     .detailH1 {
-        font-size: 20px;
+        font-size: 15px;
         grid-column: 1 / 2;
+        margin-left: 0;
+
     }
 
     .detailImage {
@@ -312,7 +304,10 @@ h6 {
     .detailp {
         /* grid-column: 1 / 2; */
         grid-row: 5;
-        margin-right: 20px;
+
+        margin-left: 20px;
+        margin-right: 0;
+        text-align: center;
 
     }
 
@@ -323,14 +318,7 @@ h6 {
         margin-right: 20px;
     }
 
-    h6 {
-        font-size: 20px;
-        grid-column: 1 / 2;
-        grid-row: 2;
-        position: absolute;
-        top: -70px;
-        margin-top: 30px;
-    }
+
 
     .divIngredient {
         grid-column: 1 / 2;

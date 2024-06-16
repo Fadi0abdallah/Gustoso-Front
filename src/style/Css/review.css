@@ -12,16 +12,15 @@ body {
     font-size: 1em;
     color: #676767;
     transition: border 0.5s;
-    -webkit-transition: border 0.5s;
-    -moz-transition: border 0.5s;
-    -o-transition: border 0.5s;
     border: solid 3px #2A2C41;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     height: 120px;
     resize: none;
     overflow: auto;
+}
+
+.allCom {
+    margin-left: 30px;
 }
 
 .recetteid {
@@ -45,20 +44,20 @@ body {
     transition: border 0.5s;
     border: solid 3px #2A2C41;
     box-sizing: border-box;
-    height: 50px;
+    height: 40px;
 }
 
-.review-btn[type="submit"] {
+.review-btn {
     background-color: #FDBF50;
     color: #f4f4f8;
     height: 50px;
     cursor: pointer;
     font-size: 1.29em;
     border-radius: 10px;
-    width: 8vw;
+    width: 7vw;
 }
 
-.review-btn[type="submit"]:hover {
+.review-btn:hover {
     background-color: #e58f0e;
 }
 
@@ -107,8 +106,6 @@ body {
     font-weight: 900;
 }
 
-
-
 .dateReview {
     margin-top: 20px;
     font-size: 12px;
@@ -129,7 +126,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .avatar p {
@@ -163,4 +159,92 @@ body {
     grid-column: 1/4;
     grid-row: 2/4;
     text-align: center;
+}
+
+.pasReview {
+    font-size: 2em;
+    margin: 20px;
+    font-weight: 700;
+    color: #2A2C41
+}
+
+.pReview {
+    font-size: 2.2em;
+    text-align: center;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        margin-left: 50px;
+    }
+
+    .comment {
+        width: 300px;
+    }
+
+    .formreview {
+        width: 80vw;
+        height: auto;
+        margin-left: 0;
+    }
+
+    .card {
+        width: 80vw;
+        height: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .review-btn {
+        width: 14vw;
+    }
+
+    .ratin {
+        width: 17vw;
+        height: 40px;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .comment {
+        width: 250px;
+        font-size: 0.9em;
+    }
+
+    .formreview {
+        width: 90vw;
+    }
+
+    .ratin {
+        width: 50px;
+        height: 40px;
+        font-size: 0.9em;
+    }
+
+    .review-btn {
+        font-size: 1em;
+        width: 20vw;
+    }
+
+    .card {
+        width: 90vw;
+        padding: 15px;
+        grid-template-columns: 1fr;
+    }
+
+    .avatar {
+        width: 60px;
+        height: 60px;
+    }
+
+    .avatar p {
+        font-size: 1.5em;
+    }
+
+    .h2card,
+    .h2cardProfile,
+    .pcard {
+        font-size: 1em;
+    }
 }

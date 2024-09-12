@@ -35,29 +35,52 @@ const Connexion = () => {
     };
     return (
         <>
-            <p className='message'>{message}</p>
-            <section className='sectionConnexion'>
-                <form className="connexion" onSubmit={handleConnexionSubmit} >
+            <p className="message" aria-live="polite">{message}</p>
 
-                    <h1><span>SE</span> CONNECTER </h1>
+            <section className="sectionConnexion">
+                <form className="connexion" onSubmit={handleConnexionSubmit}>
+                    <h1>
+                        <span>SE</span> CONNECTER
+                    </h1>
                     <p>Nous sommes heureux de vous revoir !</p>
 
+                    <div className='divusernameconnexion'>
+                        <label className='usernameconnexion' htmlFor="username">Username:</label>
+                        <input
+                            className="usernameinput"
+                            type="text"
+                            id="username"
+                            name="username"
 
+                        />
+                    </div>
 
-                    <input className="usernameinput" type="text" id="username" placeholder=" Username" name="username" />
-                    <input className="passwordinput" type="password" id="pass" required placeholder=" password" name="password" />
+                    <div className='divpasswordconnexion'>
+                        <label className='passwordconnexion' htmlFor="password">Password:</label>
+                        <input
+                            className="passwordinput"
+                            type="password"
+                            id="password"
+                            name="password"
+                            required
+                        />
+                    </div>
 
+                    <input
+                        className="connexionsubmitinput"
+                        type="submit"
+                        value="Connexion"
+                    />
 
-                    <input className="connexionsubmitinput" type="submit" value="Connexion" />
-                    <h3>OU</h3>
+                    <h2>OU</h2>
 
-                    <Link to="http://localhost:5173/signup">
-                        <input className="signupinput" type="submit" value="Sign UP" />
+                    <Link to="/signup" className="signup-link">
+                        Sign Up
                     </Link>
                 </form>
-
-
             </section>
+
+
         </>
 
     )

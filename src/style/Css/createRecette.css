@@ -37,7 +37,7 @@ body {
     width: 100%;
 }
 
-label {
+.createForm label {
     display: flex;
     flex-direction: column;
     margin-bottom: 5px;

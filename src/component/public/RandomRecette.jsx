@@ -16,7 +16,7 @@ const RandomRecette = () => {
                 } else {
                     console.error("Expected an object with Recette property but got:", randomData.data);
                 }
-                console.log(setRandom);
+
 
             })
             .catch((error) => {

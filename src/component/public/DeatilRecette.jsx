@@ -8,26 +8,25 @@ const DeatilRecette = () => {
     const [ingredients, setIngredients] = useState([]);
 
     useEffect(() => {
-        // Fetch recipe details
+
         fetch("http://localhost:5000/api/recettes/" + id)
             .then((response) => response.json())
             .then((dataRecette) => {
-                console.log(dataRecette);
+
                 setDeatilRecette(dataRecette.data);
             });
 
-        // Fetch ingredients for the recipe
         fetch("http://localhost:5000/api/recetteingredient/by-recette/" + id)
             .then((response) => response.json())
             .then((datarecetteIngredients) => {
-                console.log(datarecetteIngredients);
+
                 setDeatilRecetteIngredient(datarecetteIngredients.data);
             });
 
         fetch("http://localhost:5000/api/ingredient")
             .then((response) => response.json())
             .then((dataIngredients) => {
-                console.log(dataIngredients);
+
                 setIngredients(dataIngredients.data || []);
             });
     }, [id]);

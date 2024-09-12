@@ -28,7 +28,7 @@ const ProfileUpdateReview = () => {
             })
             .then((reviewData) => {
                 if (reviewData.data) {
-                    console.log(reviewData.data);
+
                     setUpdateReview(reviewData.data);
                 } else {
                     throw new Error('No data found');

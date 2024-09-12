@@ -38,7 +38,7 @@
     padding: 0 .25rem;
     margin: 0 -.25rem;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Roboto Regular";
     font-size: 3em;
     font-weight: 700;
     line-height: 1.5;
@@ -58,7 +58,7 @@
     padding: 0 .25rem;
     margin: 0 -.25rem;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Roboto Regular";
     font-size: 3em;
     font-weight: 700;
     line-height: 1.5;
@@ -78,7 +78,7 @@
     padding: 0 .25rem;
     margin: 0 -.25rem;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Roboto Regular";
     font-size: 3em;
     font-weight: 700;
     line-height: 1.5;
@@ -98,7 +98,7 @@
     padding: 0 .25rem;
     margin: 0 -.25rem;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Roboto Regular";
     font-size: 3em;
     font-weight: 700;
     line-height: 1.5;

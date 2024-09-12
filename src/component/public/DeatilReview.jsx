@@ -17,7 +17,7 @@ const DetailReview = () => {
                 }
                 const dataRecette = await response.json();
                 setRecette(dataRecette.data);
-                console.log(dataRecette.data);
+
 
             } catch (error) {
                 console.error('Error fetching recette:', error);

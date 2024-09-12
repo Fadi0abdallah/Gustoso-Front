@@ -13,7 +13,7 @@ const ListAllRecettesAdm = () => {
                 return response.json()
             })
             .then((dataRecettes) => {
-                console.log(dataRecettes);
+
                 setRecettes(dataRecettes.data)
             })
     }, [needRefresh])

@@ -34,7 +34,7 @@ const UpdateRecetteAdmin = () => {
         fetch(`http://localhost:5000/api/recetteingredient/by-recette/${id}`)
             .then((response) => response.json())
             .then((datarecetteIngredients) => {
-                console.log(datarecetteIngredients);
+
                 setDetailRecetteIngredient(datarecetteIngredients.data);
             });
         fetch("http://localhost:5000/api/ingredient", { method: "GET" })
@@ -73,7 +73,7 @@ const UpdateRecetteAdmin = () => {
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    console.log(data);
+
                 })
                 .catch((error) => {
                     console.error('Error:', error);
@@ -136,7 +136,7 @@ const UpdateRecetteAdmin = () => {
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    console.log(data);
+
                 })
                 .catch((error) => {
                     console.error('Error:', error);

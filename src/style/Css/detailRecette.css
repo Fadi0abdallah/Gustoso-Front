@@ -1,7 +1,9 @@
+/* Root Styles */
 main {
     background-color: #f4f4f8;
 }
 
+/* Recette Detail Section */
 .recetteDetail {
     width: 85%;
     display: grid;
@@ -9,29 +11,30 @@ main {
     grid-template-rows: repeat(3, 1fr);
     gap: 45px;
     grid-auto-rows: minmax(100px, auto);
-    grid-auto-flow: row;
 }
 
+/* Image Container */
 .divimage {
-    width: 60vw;
     grid-column: 1 / 4;
     grid-row: 1 / 4;
-    margin-left: 30px;
+    width: 100%;
 }
 
-.detailImageprofile {
-    width: 50vw;
-    grid-column: 1 / 4;
-    grid-row: 1 / 4;
-    margin-left: 30px;
+.detailImageprofile,
+.detailImage {
+    width: 100%;
+    height: auto;
     border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    grid-column: 1 / 4;
+    grid-row: 1 / 4;
 }
 
+/* Content Area */
 .articlecontenu {
     display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-
+    flex-direction: column;
     gap: 20px;
 }
 
@@ -40,33 +43,54 @@ main {
     margin-left: 50px;
 }
 
+/* Headings */
+.detailH1,
+.h1profile,
+.detailH3,
+.detailH5,
+.h4Prepartion,
+.h2terminee {
+    text-align: center;
+}
+
 .detailH1 {
     font-size: 30px;
     font-weight: 700;
     color: #fdbf50;
     margin: 15px;
-    text-align: center;
-}
-
-.detailImage {
-    width: 600px;
-    height: 450px;
-    background-size: cover;
-    border-radius: 20px;
 }
 
 .h1profile {
-    color: #2a2c41;
     font-size: 50px;
-    text-align: center;
+    color: #2a2c41;
 }
 
 .detailH3 {
     font-size: 30px;
     color: #ff724c;
-    grid-column: 5 / 7;
+    margin-top: 10px;
+    grid-column: 4 / 7;
     grid-row: 1;
-    margin-top: 60px;
+}
+
+.detailH5 {
+    font-size: 25px;
+    color: #fdbf50;
+    margin-top: 20px;
+}
+
+.h4Prepartion {
+    font-size: 25px;
+    font-weight: 600;
+    color: #ff724c;
+    grid-column: 1 / 5;
+}
+
+.h2terminee {
+    font-size: 40px;
+    color: #ff724c;
+    margin-bottom: 20px;
+    margin-right: 80px;
 }
 
 .divdetailH5 {
@@ -76,104 +100,76 @@ main {
     gap: 20px;
 }
 
-.detailH5 {
-    color: #fdbf50;
-    font-size: 25px;
+/* Paragraphs */
+.detailp,
+.detailpInfo {
+    font-size: 20px;
+    color: #2a2c41;
+    margin: 0 30px;
 }
 
 .detailp {
     grid-column: 1 / 6;
     grid-row: 5 / 6;
     font-size: 25px;
-    margin-left: 30px;
-    margin-right: 30px;
-    color: #2a2c41;
 }
 
 .detailpInfo {
-    display: flex;
+    font-weight: 700;
     grid-column: 1 / 6;
     grid-row: 6;
-    font-size: 20px;
-    color: #2a2c41;
-    font-weight: 700;
-    position: relative;
-    margin-left: 30px;
-    margin-right: 30px;
-
 }
 
-
+/* Ingredient Section */
 .divIngredient {
-    grid-column: 4 / 7;
+    grid-column: 3 / 6;
     grid-row: 2 / 4;
-    font-size: 25px;
-    font-weight: 700;
     display: flex;
     justify-content: flex-end;
-}
-
-.h4Prepartion {
-    color: #ff724c;
     font-size: 25px;
-    font-weight: 600;
-    grid-column: 1 / 5;
-    grid-row: 4;
-    margin-left: 20px;
-
-    align-content: center;
-
+    font-weight: 700;
 }
 
+/* Line Separator */
 .lineRed {
     width: 60vw;
     height: 3px;
     background-color: #ff724c;
     margin-left: 200px;
     margin-bottom: 20px;
-
 }
 
-.h2terminee {
-    color: #ff724c;
-    text-align: center;
-    font-size: 40px;
-    margin-bottom: 20px;
-    margin-right: 80px;
-}
-
+/* Responsive Styles */
 @media screen and (max-width: 1170px) {
     .divIngredient {
         margin-left: 20px;
-        grid-column: 5 / 7;
+        grid-column: 4 / 7;
     }
 
     .detailImage {
         width: 500px;
         height: 450px;
-        background-size: cover;
-        border-radius: 20px;
     }
-
 }
 
 @media screen and (max-width: 768px) {
     .recetteDetail {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(6, auto);
-        gap: 10px;
-        grid-auto-flow: row;
+        gap: 20px;
+        /* Reduce gap size to avoid large spaces */
     }
 
     .divimage {
-        width: 60vw;
-        grid-column: 1 / 5;
+        grid-column: 1 / 6;
         grid-row: 1 / 2;
+        width: 100%;
+        /* Make the image responsive */
     }
 
     .detailImage {
-        width: 400px;
-        height: 400px;
+        width: 100%;
+        height: auto;
         background-size: cover;
         border-radius: 20px;
     }
@@ -183,6 +179,12 @@ main {
         grid-column: 1 / 5;
     }
 
+    .divdetailH5 {
+        grid-row: 3;
+        display: flex;
+        flex-direction: column;
+    }
+
     .detailH3 {
         font-size: 18px;
         grid-column: 1 / 5;
@@ -190,50 +192,83 @@ main {
         margin-top: 20px;
     }
 
-    .divdetailH5 {
-        grid-column: 5;
-        grid-row: 2;
-    }
-
-    .detailp {
-        grid-column: 1 / 5;
-        grid-row: 5;
-    }
-
+    .detailp,
     .detailpInfo {
-        grid-column: 1 / 5;
-        grid-row: 6;
-        position: relative;
-        margin-top: 40px;
-
+        grid-column: 1 / 6;
     }
-
-
 
     .divIngredient {
         grid-column: 1 / 5;
-        grid-row: 3 / 4;
-        display: flex;
+        grid-row: 3;
         justify-content: flex-start;
     }
 
     .h4Prepartion {
-        color: #ff724c;
         font-size: 20px;
-        font-weight: 500;
-        grid-column: 1 / 4;
-        grid-row: 4;
+        font-weight: 700;
+        grid-column: 1 / 6;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .recetteDetail {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, auto);
+        gap: 15px;
+        /* Reduce the gap size to prevent large spaces */
+    }
+
+    .divimage {
+        grid-column: 1 / 6;
+        grid-row: 1 / 2;
+        width: 100%;
+        /* Full width for mobile */
+    }
+
+    .detailImage {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .detailH1 {
+        font-size: 15px;
+        margin-top: 10px;
+        /* Adjust spacing to reduce gap */
+    }
+
+    .detailH3 {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .detailp {
         margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
 
-        align-content: center;
+    .detailpInfo {
+        margin-top: 10px;
+        /* Add margin to prevent overlap */
+    }
 
+    .divIngredient {
+        grid-column: 1 / 2;
+        font-size: 20px;
+    }
+
+    .h4Prepartion {
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 10px;
     }
 }
 
 .articleRecette {
-    border: #2a2c41 5px solid;
+    border: 5px solid #2a2c41;
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
@@ -253,89 +288,6 @@ main {
     margin-bottom: 20px;
 }
 
-/* Mobile devices */
-@media screen and (max-width: 390px) {
-    .sectionRecette {
-        margin-left: 50px;
-    }
-
-    .recetteDetail {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(8, auto);
-        gap: 10px;
-    }
-
-    .divimage {
-        width: 50vw;
-        grid-column: 1/2;
-        grid-row: 1 / 2;
-        margin-left: 0;
-    }
-
-    .detailH1 {
-        font-size: 15px;
-        grid-column: 1 / 2;
-        margin-left: 0;
-
-    }
-
-    .detailImage {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-    }
-
-    .detailH3 {
-        font-size: 16px;
-        grid-column: 1 / 2;
-        grid-row: 2;
-        margin-top: 10px;
-    }
-
-    .divdetailH5 {
-        grid-column: 4;
-        grid-row: 2;
-    }
-
-    .detailH5 {
-        font-size: 20px;
-    }
-
-    .detailp {
-        /* grid-column: 1 / 2; */
-        grid-row: 5;
-
-        margin-left: 20px;
-        margin-right: 0;
-        text-align: center;
-
-    }
-
-    .detailpInfo {
-        /* grid-column: 1 / 2; */
-        grid-row: 6;
-        position: relative;
-        margin-right: 20px;
-    }
-
-
-
-    .divIngredient {
-        grid-column: 1 / 2;
-        grid-row: 3;
-        display: flex;
-        justify-content: flex-start;
-        font-size: 20px;
-
-    }
-
-    .h4Prepartion {
-        color: #ff724c;
-        font-size: 15px;
-        font-weight: 300;
-        grid-column: 1 / 4;
-        grid-row: 4;
-        margin-left: 10px;
-        align-content: center;
-    }
+.sectionRecette {
+    margin-left: 50px;
 }

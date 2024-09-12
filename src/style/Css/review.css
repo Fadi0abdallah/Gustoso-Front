@@ -8,7 +8,7 @@ body {
     border-radius: 20px;
     outline: none;
     padding: 10px;
-    font-family: 'Sniglet', cursive;
+    font-family: "Roboto Regular", cursive;
     font-size: 1em;
     color: #676767;
     transition: border 0.5s;
@@ -38,7 +38,7 @@ body {
     border-radius: 10px;
     outline: none;
     padding: 10px;
-    font-family: 'Sniglet', cursive;
+    font-family: "Roboto Regular", cursive;
     font-size: 1em;
     color: #676767;
     transition: border 0.5s;

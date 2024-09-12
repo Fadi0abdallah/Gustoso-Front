@@ -52,9 +52,9 @@ const CreateRecette = () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                const recetteId = data.data.id; // Assuming the backend returns the created recipe ID
+                const recetteId = data.data.id;
                 handleCreateRecetteIngredients(recetteId);
-                navigate(`/recettes/detail/${recetteId}`);
+                navigate(`/recettes/deatil/${recetteId}`);
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -80,7 +80,7 @@ const CreateRecette = () => {
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    console.log(data);
+
                 })
                 .catch((error) => {
                     console.error('Error:', error);

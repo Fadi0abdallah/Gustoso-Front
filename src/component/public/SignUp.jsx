@@ -33,21 +33,50 @@ const SignUp = () => {
             });
     };
     return (
-        <section className='sectionSignup'>
+        <section className="sectionSignup">
+            <form className="connexion" onSubmit={handleSignupSubmit}>
+                <h1>
+                    <span>S'</span> INSCRIRE
+                </h1>
+                <h2>
+                    Rejoignez la communauté <span>Gustoso</span>
+                </h2>
 
-            <form className="connexion" onSubmit={handleSignupSubmit} >
-                <h1><span>S'</span> INSCRIRE</h1>
-                <h2> Rejoignez la communauté <span>Gustoso</span></h2>
+                <p>
+                    Retrouvez facilement vos recettes préférées pour vous faciliter la vie au
+                    quotidien.
+                </p>
 
-                <p>Retrouvez facilement vos recettes préférées pour vous faciliter la vie au quotidien.</p>
+                <div className='divusernamesignup'>
+                    <label className='usernamesignup' htmlFor="username">Username:</label>
+                    <input
+                        className="usernameinput"
+                        type="text"
+                        id="username"
+                        name="username"
+                        aria-label="Enter your username"
+                        required
+                    />
+                </div>
 
-                <input className="usernameinput" type="text" id="username" placeholder=" Username" name="username" />
-                <input className="passwordinput" type="password" id="pass" required placeholder=" password" name="password" />
-                <input className="signupinput" type="submit" value="Sign UP" />
+                <div className='divusernamesignup'>
+                    <label className='passwordsignup' htmlFor="password">Password:</label>
+                    <input
+                        className="passwordinput"
+                        type="password"
+                        id="password"
+                        name="password"
+                        aria-label="Enter your password"
+                        required
+                    />
+                </div>
 
+                <input
+                    className="signupinput"
+                    type="submit"
+                    value="Sign Up"
+                />
             </form>
-
-
         </section>
 
 

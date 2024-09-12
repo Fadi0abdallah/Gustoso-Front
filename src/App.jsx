@@ -25,6 +25,7 @@ import RecetteSearchPage from "./page/public/RecetteSearchPage"
 import CreateIngredientPage from "./page/public/CreateIngredientPage"
 import ProfileUpdateRecette from "./page/public/ProfileUpdateRecette"
 import ProfileUpdateReviewPage from "./page/public/ProfileUpdateReviewPage"
+import QuisommeNousPage from "./page/public/QuisommenousPage"
 
 
 
@@ -49,6 +50,7 @@ function App() {
         <Route path="/new-ingredient" element={<CreateIngredientPage />} />
         <Route path="/newrecette" element={<CreateRecettePage />} />
         <Route path="/recette-search/:RecetteName" element={<RecetteSearchPage />} />
+        <Route path="/gustoso" element={<QuisommeNousPage />} />
 
 
 

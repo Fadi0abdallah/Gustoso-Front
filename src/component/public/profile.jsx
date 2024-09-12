@@ -17,7 +17,7 @@ const Profile = () => {
             })
             .then((dataProfile) => {
                 setProfile(dataProfile);
-                console.log(dataProfile)
+
             })
             .catch((error) => {
                 setError(error.message);

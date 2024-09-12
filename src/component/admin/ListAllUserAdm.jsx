@@ -15,7 +15,7 @@ const ListAllUserAdm = () => {
                 return response.json()
             })
             .then((dateUser) => {
-                console.log(dateUser.data);
+
                 setUsers(dateUser.data)
             })
     }, [needRefresh])
@@ -37,7 +37,7 @@ const ListAllUserAdm = () => {
     }, [decodedToken, navigate]);
     return (
         <section className="sectionAllUser">
-            {decodedToken && (decodedToken.roleId === 1 || decodedToken.roleId === 2) && (
+            {decodedToken && (decodedToken.roleId === 1) (
                 <>
                     <Link to="/admin"> <img className="exitimage" src="/logoAndImage/sortir.png" alt="back" /> </Link>
                     {

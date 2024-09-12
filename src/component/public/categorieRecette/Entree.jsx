@@ -10,7 +10,7 @@ const Entree = () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data.data);
+
                 setEntrees(data.data);
             });
     }, []);

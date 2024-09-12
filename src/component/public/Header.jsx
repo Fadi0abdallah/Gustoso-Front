@@ -3,8 +3,9 @@ import '../../style/header.css';
 import { Link, useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
-const isCookies = (access_token) => {
-    return Cookies.get(access_token) !== undefined;
+// Helper function to check if the access token exists
+const hasCookies = (tokenName) => {
+    return Cookies.get(tokenName) !== undefined;
 };
 
 const Header = () => {
@@ -14,17 +15,31 @@ const Header = () => {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
-    const logOut = () => {
+    // Logout function
+    const handleLogout = () => {
         Cookies.remove('access_token');
-        navigate("/connexion");
+        navigate('/connexion');
+    };
+
+    // Handle recette search
+    const handleRecetteSearch = (event) => {
+        event.preventDefault();
+        const searchRecetteByName = event.target.searchRecette.value;
+        navigate(`/recette-search/${searchRecetteByName}`);
+    };
+
+    // Handle burger click for mobile navigation toggle
+    const [isActive, setIsActive] = useState(false);
+    const handleBurgerClick = () => {
+        setIsActive(!isActive);
     };
 
     useEffect(() => {
-        const haveCookies = isCookies('access_token');
-        setIsCookie(haveCookies);
+        const checkCookies = hasCookies('access_token');
+        setIsCookie(checkCookies);
 
-        if (haveCookies) {
-            fetch("http://localhost:5000/api/users/profile", {
+        if (checkCookies) {
+            fetch('http://localhost:5000/api/users/profile', {
                 credentials: 'include'
             })
                 .then((response) => {
@@ -37,87 +52,84 @@ const Header = () => {
                     setProfile(dataProfile);
                     setLoading(false);
                 })
-                .catch((error) => {
-                    setError(error.message);
+                .catch((err) => {
+                    setError(err.message);
                     setLoading(false);
                 });
         } else {
             setLoading(false);
         }
+
+        // Cleanup function
+        return () => {
+            setProfile(null);
+        };
     }, []);
-
-
-    const handleRecetteSearch = (event) => {
-        event.preventDefault();
-        const searchRecettebyname = event.target.searchRecette.value;
-        navigate(`/recette-search/${searchRecettebyname}`);
-    };
-
-
-
-    const [isActive, setIsActive] = useState(false);
-
-    const handleBurgerClick = () => {
-        setIsActive(!isActive);
-    };
 
     return (
         <header>
-            <nav>
+            <article className='navheaser'>
                 <ul className={`recetteNav ${isActive ? 'active' : ''}`}>
-                    <Link to="/entree"><li><a href="#section1">Entrées</a></li> </Link>
-                    <Link to="/plat"> <li><a href="#section2">Plats</a></li> </Link>
-                    <Link to="/dessert"><li><a href="#section3">Desserts</a></li></Link>
-                    {isCookie &&
-                        <Link to="/newrecette"><li><a href="#section4">Ajouter une recette</a></li></Link>
+                    <Link to="/entree"><li>Entrées</li></Link>
+                    <Link to="/plat"><li>Plats</li></Link>
+                    <Link to="/dessert"><li>Desserts</li></Link>
 
-                    }
+                    {loading && <p>Loading...</p>}
 
+                    {isCookie ? (
+                        <>
+                            <Link to="/newrecette"><li>Ajouter une recette</li></Link>
+                            <div className="profileLogout">
+                                <Link to="/profile">
+                                    <img className="logoprofile" src="/logoAndImage/profile.png" alt="Profile" />
+                                    {profile && <h2 className="h2profile">Bonjour {profile.username}</h2>}
+                                </Link>
+                                <li onClick={handleLogout}>
+                                    <img className="logosearch" src="/logoAndImage/se-deconnecter.png" alt="Logout" />
+                                </li>
+                            </div>
+                        </>
+                    ) : (
+                        !loading && (
+                            <div className="btndiv">
+                                <Link to="/connexion" className="section4">Connexion</Link>
+                                <Link to="/signup" className="section5">Sign Up</Link>
+                            </div>
+                        )
+                    )}
                 </ul>
-                <div
-                    onClick={handleBurgerClick}
-                    id="burger"
-                    className={isActive ? 'active' : ''}
-                >
+
+                <div onClick={handleBurgerClick} id="burger" className={isActive ? 'active' : ''}>
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-            </nav>
+            </article>
 
-            <div className='logoAndbar'>
-                <Link to="/"> <img className='logoheader' src="/logoAndImage/food___beverage-removebg-preview.png" alt="logo" /></Link>
+            <div className="logoAndbar">
+                <Link to="/">
+                    <img className="logoheader" src="/logoAndImage/food___beverage-removebg-preview.png" alt="Logo" />
+                </Link>
 
                 <div>
-                    <form className='searchForm' onSubmit={handleRecetteSearch}>
-                        <label className='search-box'>
-                            <button className='search-btn' ><img className='logosearch' src="/logoAndImage/search.png" alt="search" /></button>
-
-                            <input type="search" id="site-search" name="searchRecette" />
+                    <form className="searchForm" onSubmit={handleRecetteSearch}>
+                        <label className="search-box">
+                            <button className="search-btn" aria-label="Search">
+                                <img className="logosearch" src="/logoAndImage/search.png" alt="Search icon" />
+                            </button>
+                            <input
+                                type="search"
+                                id="site-search"
+                                name="searchRecette"
+                                placeholder="Rechercher une recette"
+                                aria-label="Search for a recipe"
+                            />
                         </label>
                     </form>
                 </div>
-
             </div>
 
-            {loading ? (
-                <p>Loading...</p>
-            ) : isCookie ? (
-                <>
-                    <div className='profileLogout'>
-                        <Link to="/profile"><img className='logoprofile' src="/logoAndImage/profile.png" alt="search" />
-                            {profile && <h2 className='h2profile'>Bonjour {profile.username}</h2>}</Link>
-                    </div>
-                    <li onClick={logOut}><img className='logosearch' src="/logoAndImage/se-deconnecter.png" alt="logout" /></li>
-                </>
-
-            ) : (
-                <div className='btndiv'>
-                    <Link to="/connexion" className='section4'>Connexion</Link>
-                    <Link to="/signup" className='section5'>Sign Up</Link>
-                </div>
-            )}
-            {error && <p className='error'>{error}</p>}
+            {error && <p className="error">{error}</p>}
         </header>
     );
 };

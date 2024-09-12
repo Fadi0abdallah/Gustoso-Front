@@ -23,6 +23,7 @@ const ListAllIngredientsAdm = () => {
         }
     }, [decodedToken, navigate])
 
+
     const handleDeleteIngredient = (event, idingredient) => {
         event.preventDefault()
         fetch(`http://localhost:5000/api/ingredient/${idingredient}`, {

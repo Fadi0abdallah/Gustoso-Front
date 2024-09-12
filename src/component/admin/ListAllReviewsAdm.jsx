@@ -15,7 +15,7 @@ const ListAllReviewsAdm = () => {
                 return response.json()
             })
             .then((dataReviwes) => {
-                console.log(dataReviwes);
+
                 setReviews(dataReviwes.data)
             })
     }, [needRefresh])

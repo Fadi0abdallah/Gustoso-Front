@@ -22,7 +22,7 @@ const ReviewsRecettes = () => {
                     throw new Error('Data is not an array');
                 }
 
-                console.log(dataReview);
+
                 setReviews(dataReview);
             } catch (error) {
                 console.error('Error fetching reviews:', error);

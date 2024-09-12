@@ -4,73 +4,142 @@
     --text-color: #FF724C;
     --dark-bg-color: #2A2C41;
     --light-bg-color: #ffffff;
+    --input-border-color: var(--text-color);
 }
 
 body {
     background-color: var(--main-bg-color);
 }
 
-.connexion h1 {
-    font-size: 85px;
-}
-
-.connexion h1 span {
-    color: var(--accent-color);
-    font-weight: 900;
-    font-size: 90px;
-}
-
-.connexion h2 {
-    font-size: 60px;
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
-.connexion h2 span {
-    color: var(--accent-color);
-    font-weight: 900;
-    font-size: 70px;
-}
-
+/* Connexion Section Styling */
 .connexion {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    flex-wrap: wrap;
     border: 5px solid black;
     border-radius: 20px;
     width: 60vw;
     height: 90vh;
     position: absolute;
-    right: 25%;
+    right: 20%;
     background-color: var(--main-bg-color);
-    box-shadow: var(--text-color) 2px 5px;
+    box-shadow: 2px 5px var(--text-color);
+    padding: 2rem;
+}
+
+.connexion h1 {
+    font-size: 85px;
+}
+
+.connexion h1 span,
+.connexion h2 span {
+    color: var(--accent-color);
+    font-weight: 900;
+}
+
+.connexion h2 {
+    font-size: 60px;
+}
+
+.connexion h1 span {
+    font-size: 90px;
+}
+
+.connexion h2 span {
+    font-size: 70px;
 }
 
 .connexion p,
 .connexion h3 {
     font-size: 50px;
-    text-align: center;
 }
 
+/* Shared Input and Button Styles */
+.input-field {
+    padding: 12px 20px;
+    background: var(--dark-bg-color);
+    border: 2px solid var(--input-border-color);
+    border-radius: 25px;
+    color: var(--text-color);
+    font-size: 2rem;
+    width: 25vw;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: rgb(100, 153, 255);
+    box-shadow: 0 0 10px rgba(100, 153, 255, 0.5);
+}
+
+.connexionsubmitinput,
+.signupinput {
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.connexionsubmitinput {
+    background-color: var(--text-color);
+    color: var(--dark-bg-color);
+    width: 20vw;
+}
+
+.signupinput {
+    background-color: var(--light-bg-color);
+    color: var(--text-color);
+    width: 18vw;
+}
+
+.connexionsubmitinput:hover,
+.signupinput:hover {
+    transform: scale(1.05);
+}
+
+.message {
+    font-size: 2.7rem;
+    font-weight: 700;
+    color: red;
+}
+
+/* Label Styling */
+.label {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Section Containers */
 .sectionConnexion,
 .sectionSignup {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-size: cover;
 }
 
 .sectionSignup {
     background-color: #868686;
-
-}
-
-.message {
-    font-size: 2.7em;
-    font-weight: 700;
-    color: red;
 }
 
 .usernameinput,
@@ -88,42 +157,60 @@ body {
     font-size: 50px;
 }
 
-.usernameinput:focus,
-.passwordinput:focus {
-    outline: none;
-    box-shadow: none;
-    border-color: rgb(100, 153, 255);
+.divusernameconnexion {
+    display: flex;
+    flex-direction: column;
 }
 
-.connexionsubmitinput,
-.signupinput {
-    cursor: pointer;
-    border-radius: 30px;
-    height: 9vh;
-    font-size: 40px;
-    font-weight: bold;
-    color: var(--dark-bg-color);
+.divpasswordconnexion {
+    display: flex;
+    flex-direction: column;
 }
 
-.connexionsubmitinput {
-    padding: 0 1vw;
-    width: 20vw;
-    background-color: var(--text-color);
+
+.usernameconnexion {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #FF724C;
 }
 
-.signupinput {
-    padding: 0 20px;
-    width: 18vw;
-    background-color: var(--light-bg-color);
-    font-weight: 900;
-    color: var(--text-color);
+.passwordconnexion {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #FF724C;
 }
 
-::placeholder {
-    color: #ff734c71;
+.divusernamesignup {
+    display: flex;
+    flex-direction: column;
 }
 
-@media screen and (max-width: 1100px) {
+.divpasswordsignup {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.usernamesignup {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #FF724C;
+}
+
+.passwordsignup {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #FF724C;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .connexion {
+        width: 80vw;
+        height: 80vh;
+        right: 10%;
+    }
+
     .connexion h1 {
         font-size: 50px;
     }
@@ -136,62 +223,136 @@ body {
         font-size: 35px;
     }
 
-    .usernameinput,
-    .passwordinput {
-        border-radius: 10px;
+    .input-field {
         height: 6vh;
         width: 35vw;
-        font-size: 13px;
-    }
-
-    .connexion {
-        width: 80vw;
-        height: 80vh;
-        right: 10%;
+        font-size: 1.5rem;
     }
 
     .connexionsubmitinput,
     .signupinput {
-        font-size: 20px;
+        font-size: 1.8rem;
         height: 7vh;
     }
 
     .signupinput {
-        width: 19vw;
+        width: 25vw;
     }
+
+    .label {
+        font-size: 2.5rem;
+    }
+
+    .usernameinput,
+    .passwordinput {
+        border-radius: 10px;
+        height: 6vh;
+        width: 25vw;
+        font-size: 13px;
+    }
+
+    .usernameconnexion {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #FF724C;
+    }
+
+    .passwordconnexion {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #FF724C;
+    }
+
+    .usernamesignup {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #FF724C;
+    }
+
+    .passwordsignup {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #FF724C;
+    }
+
 }
 
 @media screen and (max-width: 480px) {
+    .connexion {
+        width: 90vw;
+        height: 80vh;
+        right: 5%;
+    }
+
     .connexion h1 {
         font-size: 25px;
     }
 
-    .connexion h1 span {
-        font-size: 30px;
+    .connexion h1 span,
+    .connexion h2 span {
+        font-size: 25px;
     }
 
     .connexion h2 {
         font-size: 20px;
     }
 
-    .connexion h2 span {
-        font-size: 25px;
-    }
-
     .connexion p {
         font-size: 15px;
+    }
+
+    .input-field {
+        height: 7vh;
+        width: 50vw;
+        font-size: 1rem;
     }
 
     .connexionsubmitinput,
     .signupinput {
         border-radius: 20px;
         width: 35vw;
-        height: 7vh;
-        font-size: 14px;
+        height: 6vh;
+        font-size: 1rem;
     }
 
     .signupinput {
         width: 25vw;
+    }
+
+    .label {
+        font-size: 1.5rem;
+    }
+
+    .usernameconnexion {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #FF724C;
+    }
+
+    .passwordconnexion {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #FF724C;
+    }
+
+    .usernameinput,
+    .passwordinput {
+        border-radius: 10px;
+        height: 6vh;
+        width: 40vw;
         font-size: 13px;
     }
+
+    .usernamesignup {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #FF724C;
+    }
+
+    .passwordsignup {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #FF724C;
+    }
+
 }

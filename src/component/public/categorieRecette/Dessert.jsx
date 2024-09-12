@@ -9,7 +9,7 @@ const Dessert = () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data.data);
+
                 setDesserts(data.data);
             });
     }, []);

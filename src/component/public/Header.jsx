@@ -74,43 +74,11 @@ const Header = () => {
                     <Link to="/plat"><li>Plats</li></Link>
                     <Link to="/dessert"><li>Desserts</li></Link>
 
-                    {loading && <p>Loading...</p>}
+                    {isCookie &&
 
-                    {isCookie ? (
-                        <>
-                            <Link to="/newrecette"><li>Ajouter une recette</li></Link>
-                            <div className="profileLogout">
-                                <Link to="/profile">
-                                    <img className="logoprofile" src="/logoAndImage/profile.png" alt="Profile" />
-                                    {profile && <h2 className="h2profile">Bonjour {profile.username}</h2>}
-                                </Link>
-                                <li onClick={handleLogout}>
-                                    <img className="logosearch" src="/logoAndImage/se-deconnecter.png" alt="Logout" />
-                                </li>
-                            </div>
-                        </>
-                    ) : (
-                        !loading && (
-                            <div className="btndiv">
-                                <Link to="/connexion" className="section4">Connexion</Link>
-                                <Link to="/signup" className="section5">Sign Up</Link>
-                            </div>
-                        )
-                    )}
+                        <Link to="/newrecette"><li>Ajouter une recette</li></Link>
+                    }
                 </ul>
-
-                <div onClick={handleBurgerClick} id="burger" className={isActive ? 'active' : ''}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </article>
-
-            <div className="logoAndbar">
-                <Link to="/">
-                    <img className="logoheader" src="/logoAndImage/food___beverage-removebg-preview.png" alt="Logo" />
-                </Link>
-
                 <div>
                     <form className="searchForm" onSubmit={handleRecetteSearch}>
                         <label className="search-box">
@@ -127,6 +95,43 @@ const Header = () => {
                         </label>
                     </form>
                 </div>
+
+
+
+                <div onClick={handleBurgerClick} id="burger" className={isActive ? 'active' : ''}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </article>
+
+            <div className="logoAndbar">
+                <Link to="/">
+                    <img className="logoheader" src="/logoAndImage/food___beverage-removebg-preview.png" alt="Logo" />
+                </Link>
+
+                {loading && <p>Loading...</p>}
+
+                {isCookie ? (
+                    <>
+                        <div className="profileLogout">
+                            <Link to="/profile">
+                                <img className="logoprofile" src="/logoAndImage/profile.png" alt="Profile" />
+                                {profile && <h2 className="h2profile">Bonjour {profile.username}</h2>}
+                            </Link>
+                            <li onClick={handleLogout}>
+                                <img className="logosearch" src="/logoAndImage/se-deconnecter.png" alt="Logout" />
+                            </li>
+                        </div>
+                    </>
+                ) : (
+                    !loading && (
+                        <div className="btndiv">
+                            <Link to="/connexion" className="section4">Connexion</Link>
+                            <Link to="/signup" className="section5">Sign Up</Link>
+                        </div>
+                    )
+                )}
             </div>
 
             {error && <p className="error">{error}</p>}

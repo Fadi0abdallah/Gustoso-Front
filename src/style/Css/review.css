@@ -175,9 +175,9 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    main {
+    /* main {
         margin-left: 50px;
-    }
+    } */
 
     .comment {
         width: 300px;

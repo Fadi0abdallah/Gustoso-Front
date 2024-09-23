@@ -18,6 +18,8 @@ main {
     grid-column: 1 / 4;
     grid-row: 1 / 4;
     width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 .detailImageprofile,

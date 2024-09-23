@@ -15,7 +15,7 @@ const Dessert = () => {
     }, []);
 
     return (
-        <main>
+        <main className="categoriesMain">
             <h1 className="h1Categorie">Desserts</h1>
             <section className="CategorieSection">
                 {desserts.map((dessert) => (

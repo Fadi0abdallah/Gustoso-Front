@@ -16,7 +16,7 @@ const Plat = () => {
     }, []);
 
     return (
-        <main>
+        <main className="categoriesMain">
             <h1 className="h1Categorie">Plat</h1>
             <section className="CategorieSection">
                 {plats.map((plat) => (

@@ -16,7 +16,7 @@ const Entree = () => {
     }, []);
 
     return (
-        <main>
+        <main className="categoriesMain">
             <h1 className="h1Categorie">Entrées</h1>
             <section className="CategorieSection">
                 {entrees.map((entree) => (

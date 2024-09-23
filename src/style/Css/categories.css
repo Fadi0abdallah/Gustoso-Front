@@ -1,7 +1,6 @@
 .CategorieSection {
     display: flex;
-    width: 100%;
-    display: flex;
+
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -9,9 +8,13 @@
 
 }
 
+.categoriesMain {
+    width: 100vw;
+}
+
 .articleCategorie {
     width: 600px;
-    height: 350px;
+
     margin: 30px;
     text-align: center;
 
@@ -50,7 +53,6 @@
 @media screen and (max-width: 768px) {
     .articleCategori {
         width: 400px;
-        height: 300px;
         margin: 25px;
         text-align: center;
 
@@ -58,7 +60,7 @@
 
     .Categoriephote {
 
-        height: 250px;
+        height: 300px;
         background-size: cover;
         border-radius: 20px;
     }
@@ -73,7 +75,7 @@
     }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 440px) {
     .articleCategori {
         width: 300px;
         height: 250px;

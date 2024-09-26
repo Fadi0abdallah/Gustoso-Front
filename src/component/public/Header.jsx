@@ -105,7 +105,7 @@ const Header = () => {
                 </div>
             </article>
 
-            <div className="logoAndbar">
+            <div className="logoAndbarHeader">
                 <Link to="/">
                     <img className="logoheader" src="/logoAndImage/food___beverage-removebg-preview.png" alt="Logo" />
                 </Link>
@@ -115,13 +115,14 @@ const Header = () => {
                 {isCookie ? (
                     <>
                         <div className="profileLogout">
+                            <li onClick={handleLogout}>
+                                <img className="logoout" src="/logoAndImage/se-deconnecter.png" alt="Logout" />
+                            </li>
                             <Link to="/profile">
                                 <img className="logoprofile" src="/logoAndImage/profile.png" alt="Profile" />
                                 {profile && <h2 className="h2profile">Bonjour {profile.username}</h2>}
                             </Link>
-                            <li onClick={handleLogout}>
-                                <img className="logosearch" src="/logoAndImage/se-deconnecter.png" alt="Logout" />
-                            </li>
+
                         </div>
                     </>
                 ) : (

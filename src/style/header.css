@@ -16,8 +16,6 @@ header {
     display: flex;
     justify-content: center;
     flex-direction: column-reverse;
-    margin-bottom: 20px;
-
 }
 
 .navheaser {
@@ -101,6 +99,7 @@ header {
     flex-flow: wrap-reverse;
     align-items: center;
     justify-content: center;
+    width: 40vw;
 }
 
 .h2profile {
@@ -119,10 +118,12 @@ header {
     height: 45px;
 }
 
-.logoAndbar {
+.logoAndbarHeader {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    width: 100vw;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 
 .logoheader {
@@ -148,19 +149,20 @@ a {
     font-weight: 600;
 }
 
-.recetteNav li:last-of-type:hover a,
-a:hover {
+.recetteNav a :hover {
     color: #fdbf50;
 }
 
-/* Burger Menu placed on the right */
+.gridThree ul a:hover {
+    color: #fdbf50;
+}
+
+
 #burger {
     display: none;
     position: absolute;
     right: 20px;
-    /* Placed on the right side */
     top: 20px;
-    /* Adjust as needed */
 }
 
 #burger span {
@@ -201,7 +203,6 @@ a:hover {
         position: absolute;
         top: 150px;
         right: 20px;
-        /* Aligned with burger on the right */
         background-color: #ffffff;
         padding: 20px;
         flex-direction: column;
@@ -221,7 +222,6 @@ a:hover {
     }
 }
 
-/* Smaller Screens */
 @media screen and (max-width: 768px) {
     .logoheader {
         width: 150px;
@@ -234,6 +234,11 @@ a:hover {
     }
 
     .logosearch {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logoout {
         width: 40px;
         height: 40px;
     }
@@ -283,18 +288,20 @@ a:hover {
         font-size: 20px;
     }
 
-    .logosearch {
+    /* .logosearch {
         width: 40px;
         height: 40px;
+    } */
+    .logoAndbarHeader {
+        width: 80vw;
     }
 }
 
-/* Smallest Screens */
 @media screen and (max-width: 480px) {
     .logoheader {
         width: 100px;
         height: 70px;
-        margin-right: 140px;
+        margin-right: 40px;
     }
 
     .divsearch {
@@ -304,8 +311,8 @@ a:hover {
 
     .profileLogout {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row-reverse;
+        align-items: self-start;
     }
 
     .btndiv {
@@ -316,9 +323,17 @@ a:hover {
         text-align: center;
     }
 
-    .logosearch {
+    .logoout {
         width: 35px;
         height: 35px;
+        position: absolute;
+        left: 50px;
+        top: 120px;
+    }
+
+    .logosearch {
+        width: 40px;
+        height: 40px;
     }
 
     .recetteNav {
@@ -326,7 +341,6 @@ a:hover {
         position: absolute;
         top: 70px;
         right: 1px;
-        /* Aligned with the burger */
         background-color: #ffffff;
         padding: 8px;
         flex-direction: column;
@@ -379,7 +393,11 @@ a:hover {
     }
 
     .logoheader {
-        margin-right: 60px;
+        margin-bottom: 40px;
+    }
+
+    .logoAndbarHeader {
+        width: 60vw;
     }
 }
 

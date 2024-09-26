@@ -13,7 +13,7 @@ main {
     grid-auto-rows: minmax(100px, auto);
 }
 
-/* Image Container */
+
 .divimage {
     grid-column: 1 / 4;
     grid-row: 1 / 4;
@@ -33,11 +33,12 @@ main {
     grid-row: 1 / 4;
 }
 
-/* Content Area */
+
 .articlecontenu {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 50vw;
 }
 
 .servingsH3 {
@@ -107,7 +108,7 @@ main {
 .detailpInfo {
     font-size: 20px;
     color: #2a2c41;
-    margin: 0 30px;
+    margin: 0;
 }
 
 .detailp {
@@ -134,11 +135,11 @@ main {
 
 /* Line Separator */
 .lineRed {
-    width: 60vw;
+    width: 50vw;
     height: 3px;
     background-color: #ff724c;
-    margin-left: 200px;
-    margin-bottom: 20px;
+
+    margin-bottom: 2rem;
 }
 
 /* Responsive Styles */
@@ -245,8 +246,7 @@ main {
     }
 
     .detailp {
-        margin-left: 20px;
-        margin-right: 20px;
+
         text-align: center;
     }
 
@@ -265,6 +265,11 @@ main {
         font-weight: 300;
         margin-left: 10px;
     }
+
+    .articlecontenu {
+        width: 70vw;
+    }
+
 }
 
 .articleRecette {
@@ -291,5 +296,9 @@ main {
 }
 
 .sectionRecette {
-    margin-left: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

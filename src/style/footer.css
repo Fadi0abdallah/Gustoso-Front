@@ -35,7 +35,7 @@ footer {
     text-align: center;
 }
 
-.gridThree:hover {
+.gridThree a :hover {
     color: #FDBF50;
 }
 

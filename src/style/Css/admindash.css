@@ -1,217 +1,262 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-.adminsection {
-
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
+body {
+    background-color: #F4F6F7;
+    color: #2C3E50;
+    font-size: 16px;
 }
 
 .admin {
-
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: center;
-
-
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: #F7F9F9;
+    gap: 2rem;
+    padding: 20px;
 }
 
-.h2admin {
-    color: #0064aa;
-    margin: 0;
-    font-size: 2em;
-    text-align: center;
+.logoAndbar {
     width: 30vw;
-}
-
-.auser {
-    box-shadow: inset 0 0 0 0 #009246;
-    color: #009246;
-    padding: 0 .25rem;
-    margin: 0 -.25rem;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-    font-family: "Roboto Regular";
-    font-size: 3em;
-    font-weight: 700;
-    line-height: 1.5;
-    text-decoration: none;
-}
-
-.auser:hover {
-    color: #c8b67f;
-    box-shadow: inset 300px 0 0 0 #009246;
-    ;
-}
-
-/* ---------------------------- */
-.arecette {
-    box-shadow: inset 0 0 0 0 #cdcdcd;
-    color: #cdcdcd;
-    padding: 0 .25rem;
-    margin: 0 -.25rem;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-    font-family: "Roboto Regular";
-    font-size: 3em;
-    font-weight: 700;
-    line-height: 1.5;
-    text-decoration: none;
-}
-
-.arecette:hover {
-    color: #c8b67f;
-    box-shadow: inset 300px 0 0 0 #ffffff;
-    ;
-}
-
-/* ---------------------------- */
-.areview {
-    box-shadow: inset 0 0 0 0 #ce2b37;
-    color: #ce2b37;
-    padding: 0 .25rem;
-    margin: 0 -.25rem;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-    font-family: "Roboto Regular";
-    font-size: 3em;
-    font-weight: 700;
-    line-height: 1.5;
-    text-decoration: none;
-}
-
-.areview:hover {
-    color: #c8b67f;
-    box-shadow: inset 300px 0 0 0 #ce2b37;
-    ;
-}
-
-/* ---------------------------- */
-.aingredient {
-    box-shadow: inset 0 0 0 0 #000055;
-    color: #000055;
-    padding: 0 .25rem;
-    margin: 0 -.25rem;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-    font-family: "Roboto Regular";
-    font-size: 3em;
-    font-weight: 700;
-    line-height: 1.5;
-    text-decoration: none;
-}
-
-.aingredient:hover {
-    color: #c8b67f;
-    box-shadow: inset 300px 0 0 0 #000055;
-
-}
-
-@media screen and (max-width: 390px) {
-    .auser {
-        font-size: 2em;
-    }
-
-    .arecette {
-        font-size: 2em;
-    }
-
-    .areview {
-        font-size: 2em;
-    }
-
-    .aingredient {
-        font-size: 2em;
-    }
-
-    .h2admin {
-        font-size: 1.8;
-    }
-}
-
-.exitimage {
-    width: 5vw;
-    height: 7vh;
-}
-
-
-/* -------------------------- */
-.sectionAllUser {
-    background-color: #f4f4f8;
-    margin: 0;
-    padding: 20px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-
+    margin-top: 20px;
 }
 
-.user-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 400px;
-}
-
-.user-card h2 {
-    color: #4CAF50;
-    margin-bottom: 10px;
-}
-
-.user-card h4 {
-    margin: 5px 0;
-    color: #000055;
-    font-size: 1.3em;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
+.adminArticle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 65vw;
     margin-top: 10px;
 }
 
-.modify-btn {
-    background-color: #4CAF50;
-    color: white;
-    margin-right: 10px;
+.logoheaderAdmin {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
 }
 
-.modify-btn:hover {
-    background-color: #45a049;
+.logoheaderAdmin:hover {
+    transform: scale(1.1);
 }
 
-.delete-btn {
-    background-color: #f44336;
-    color: white;
+.h2admin {
+    color: #3498DB;
+    font-size: 2.5rem;
+    margin: 20px 0;
+    font-weight: 700;
+    text-align: center;
 }
 
-.delete-btn:hover {
-    background-color: #f69696;
+.adminsection {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: flex-end;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    width: 20vw;
+    height: 70vh;
 }
 
-/* ------------------ */
-
-.update-form {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    margin: 20px;
+.adminsection:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
-.form-update {
-    margin-bottom: 15px;
+.adminsection ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.adminsection li {
+    margin: 35% 0;
+}
+
+.adminsection a {
+    color: #2C3E50;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 20px 40px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 20vw;
+    height: 30vh;
+}
+
+.adminsection a:hover {
+    color: #FFF;
+}
+
+.auser {
+    background-color: #3498DB;
+}
+
+.auser:hover {
+    background-color: #2980B9;
+}
+
+.arecette {
+    background-color: #2ECC71;
+}
+
+.arecette:hover {
+    background-color: #27AE60;
+}
+
+.areview {
+    background-color: #E74C3C;
+}
+
+.areview:hover {
+    background-color: #C0392B;
+}
+
+.aingredient {
+    background-color: #8E44AD;
+}
+
+.aingredient:hover {
+    background-color: #71368A;
+}
+
+.exitimage {
+    width: 90px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 999;
+}
+
+/* Responsive Design for Tablets */
+@media screen and (max-width: 1024px) {
+    .admin {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .logoAndbar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .adminArticle {
+        width: 90%;
+    }
+
+    .adminsection {
+        width: 80vw;
+        height: auto;
+        padding: 20px;
+    }
+
+    .adminsection li {
+        margin: 10px 0;
+    }
+
+    .adminsection a {
+        width: 80vw;
+        height: auto;
+        padding: 15px;
+        font-size: 1.5rem;
+    }
+
+    .h2admin {
+        font-size: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .admin {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .logoAndbar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .adminArticle {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .adminsection {
+        width: 30vw;
+        height: 40vh;
+        padding: 15px;
+    }
+
+    .adminsection ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .adminsection li {
+        margin: 10px 0;
+    }
+
+    .adminsection a {
+        width: 95vw;
+        height: auto;
+        padding: 10px 25px;
+        font-size: 1.2rem;
+    }
+
+    .h2admin {
+        font-size: 1.8rem;
+    }
+
+    .exitimage {
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .adminsection {
+        width: 90vw;
+        height: auto;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .adminsection a {
+        font-size: 1rem;
+        padding: 8px;
+        width: 100%;
+        height: auto;
+    }
+
+    .h2admin {
+        font-size: 1.5rem;
+    }
+
+    .logoheaderAdmin {
+        margin-right: 0px;
+    }
+
+    .exitimage {
+        width: 40px;
+        right: 0px;
+    }
 }
